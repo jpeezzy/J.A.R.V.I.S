@@ -11,6 +11,6 @@ void user::storeInformation(char* name, char* age)
 {
 	ofstream myfile("txtFiles/userInfo.txt");
 	//myfile.open("userInfo.txt");
-	myfile << name << " " << age;
+	myfile << name << "\n" << age;
 	myfile.close();
 }

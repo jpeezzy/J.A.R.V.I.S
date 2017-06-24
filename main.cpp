@@ -31,8 +31,14 @@ int main()
 		festival_say_text("Hello " + name + ". How can I assist you?");
 	}
 	else
-	{
-
+	{ 
+		string name;
+		std::getline(inFile, name);
+		char* tempName = new char[35];
+		std::strcpy(tempName, name.c_str());
+		EST_String realName = EST_String(tempName);
+		cout << realName << endl;
+		festival_say_text("Welcome back " + realName + ". What do you need?");
 	}
 	cout<<"Hello world. This is a test" <<endl;
 	//make it so when you ask a question and they don't answer, ask them if they would like to google it.
