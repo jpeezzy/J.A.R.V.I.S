@@ -3,7 +3,7 @@ Ok, I got it to speak hello world. This is amazing. here is what you need.
 download everything on that page.(I did not use speech_tools2.4 with wrapper).  
 
 2.Use my makefile. I went through alot of crap to find how to use one. You need to use -laudio.
-
+#there's an issue with makefiling (I currently have an i686 architecture). You'll need to make all the files you downloaded on your own (will try to fix at a later point)
 3.http://www.cstr.ed.ac.uk/projects/festival/manual/festival_28.html
 use this link to go to C/C++ api and check the samplecode/functions
 
@@ -19,3 +19,8 @@ PROCEDURE:
 
 4. Afterwards, create a .festivalrc file and follow the steps below(the dsp/dev error)
 https://wiki.archlinux.org/index.php/Festival#Can.27t_open_.2Fdev.2Fdsp
+
+5. You will now need a few libraries you'll have to install on your own. Here is what you need: 
+sudo apt-get install curl libcurl4-gnutls-dev   
+(ubuntu) (You'll have to figure it out with your own unix distribution)
+
