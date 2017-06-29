@@ -1,13 +1,15 @@
-#include <stdio.h>
 #include <curl/curl.h>
 #include <iostream>
 #include <algorithm> //std::copy_if
 #include <vector>
 #include <fstream>
+#include "websearch.h"
+#include <map>
 //we'll need to implement a callback function here (unavoidable) (sending a function pointer as an arg. for another function. 
 #include <string> 
 size_t CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb, std::string *s)
 {
+	//callback function that writes the contents of a webpage to a string.
 	size_t newLength = size*nmemb;
 	size_t oldLength = s->size();
 	try
@@ -27,23 +29,25 @@ size_t CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb,
 	return size*nmemb;
 }
 
-void storeInformation(std::string name,std::string information)
+void websearch::storeInformation(std::string name,std::string information)
 {
+	//pushes stored information to a txt file so the main program can read it;
 	std::string textName = "infoFiles/" + name + ".txt";
 	char* textNameReal = (char*)textName.c_str();
 	std::ofstream myfile(textNameReal);
 	myfile << information;
 	myfile.close();
-
 }
-//https://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string
-int main(void) {
-	std::string s;
+
+websearch::websearch(std::string topicName) {
+	topic = topicName;
+	s;
     CURL* curl;		    
 	CURLcode result; //will give you error code if getting informaiton fails
 	curl = curl_easy_init();
-
-	curl_easy_setopt(curl, CURLOPT_URL, "https://en.wikipedia.org/wiki/CURL?%20action=render");
+	std::string url = "https://en.wikipedia.org/wiki/" + topicName + "?%20action=render"; 
+	curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+	std::cout << "URL IS " << url << std::endl;
 	//curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com/search?q=curl&oq=curl+&aqs=chrome..69i57j69i60l5.1389j0j7&client=ubuntu&sourceid=chrome&ie=UTF-8");
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L); //verify for https://
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);//verify for https://
@@ -58,43 +62,93 @@ int main(void) {
 	}
 	curl_easy_cleanup(curl); //always cleanup
 	std::cout<<"PRINTING LINES NOW " << std::endl;
+	//std::cout << s << std::endl;
+	s =cleanupInformation(s);
 	//now we must cleanup the string
-	int size = s.size();
-	int i =0;
+	//std::cout << s << std::endl; //maybe send s to an html file?
+	storeInformation(topic,s);
+	std::cout <<"PROGRAM DONE" <<std::endl;
+	//now separate the strings maybe using recursion ??? for loop seems better (remove tags)
+	//std::cout << "Position is at "<< position << std::endl;
+}
+
+std::string websearch::getString()
+{
+	return s; 
+}
+std::string websearch::cleanupInformation(std::string information)
+{
+	std::map<char, char> couples;
+	couples['<'] = '>';
+	couples['('] = ')';
+	couples['['] = ']';
+
+	//now we need to trim down the search (to the intro paragraph of the wikipedia article);
+	size_t position0 = s.find("This article",0); //gets rid of text on top of page
+	size_t position1 = s.find_first_of('\n', position0);
+	s.erase(position0,position1);
+	size_t position = s.find(" is a" , 0);
+	//we're probably goona have to make a comparison with which line is first is, who, were etc
+	size_t position2 = s.find('\n', position);
+	//s.erase(position2, std::string::npos);
+	//s.erase(0,position);
+	//std::cout << "Positio2: " << position2<<std::endl;
+	std::string newS = s.substr(position, position2-position);
+	//std::cout << newS << std::endl;
+	//std::cout<<"does it ever delete this article?"<<std::endl;
+	int i = 0;
+	int size = newS.size();
 	while( i < size)
 	{
-		if(s.at(i) == ('<'))
+	//std::cout<<"does it ever delete this article?"<<std::endl;
+		if(newS.at(i) == ('<'))
 		{
 			//std::cout <<"gets to here?" <<std::endl;
-			while(s.at(i) != '>')
+			//s.erase(i,s.find('>'));
+			while(newS.at(i) != '>')
 			{
-			s.erase(i, 1); size--;
+			newS.erase(i, 1); size--;
 			}
-			s.erase(i,1); size--;
+			newS.erase(i,1); size--;
 		}
-		else if(s.at(i) == '(')
+		else if(newS.at(i) == '(')
 		{
-			while(s.at(i) != ')')
+			while(newS.at(i) != ')')
 			{
 				//std::cout <<"gets to here" <<std::endl;
-				s.erase(i,1); size--;
+				newS.erase(i,1); size--;
 			}
-			s.erase(i,1); size--; 
+			newS.erase(i,1); size--; 
+		}
+		else if(newS.at(i) == '[')
+		{
+			while(newS.at(i) != ']')
+			{
+			//std::cout << "it gets to here. position of next one is " <<newS.find(']') <<std::endl; 
+			newS.erase(i,1); size--;	
+			}
+			newS.erase(i,1); size--;
 		}
 		else
 			i++;
 	}
-	//now we need to trim down the search (to the intro paragraph of the wikipedia article);	
-	size_t position = s.find("cURL  is" , 0);
-	size_t position2 = s.find_first_of('\n', position);
-	s.erase(position2, std::string::npos);
-	s.erase(0,position);
-	int x = s.size();
-	std::cout <<"position 2 is at " << position2 <<std::endl;
-	std::cout << s << std::endl; //maybe send s to an html file?
-	storeInformation("cURL",s);
-	std::cout <<"PROGRAM DONE" <<std::endl;
-	//now separate the strings maybe using recursion ??? for loop seems better (remove tags)
-	//std::cout << "Position is at "<< position << std::endl;
-	return 0;
+	i = 0;
+	while( i< size)
+	{
+		if(newS.at(i) == '[')
+		{
+			while(newS.at(i) != ']')
+			{
+			std::cout << "it gets to here. position of next one is " <<newS.find(']') <<std::endl; 
+			newS.erase(i,1); size--;	
+			}
+			newS.erase(i,1); size--;
+		}
+		else
+			i++;
+	}
+	//std::cout << newS << std::endl;
+	newS = topic + newS;
+	return newS;
 }
+//https://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string

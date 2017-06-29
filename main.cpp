@@ -47,7 +47,13 @@ int main()
 	EST_String newQuestion = EST_String(question);
 	festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
 	cout << "y/n?"; cin >> ans;
-
+	ifstream inFile2;
+	inFile2.open("network/infoFiles/cURL.txt");	
+	std::string information;
+	std::getline(inFile2,information);
+	std::cout << information << std::endl;
+	EST_String realInfo = EST_String(information.c_str());
+	festival_say_text(realInfo);
 	//make it so when you ask a question and they don't answer, ask them if they would like to google it.
 	//if yes, google and use the first question for an answer.
 	//also, look for keywords when they ask something and store them with the answer in a text file somehow.
