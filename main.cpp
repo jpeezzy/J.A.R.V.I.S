@@ -41,14 +41,15 @@ int main()
 		festival_say_text("Welcome back " + realName + ". What do you need?");
 	}
 	cout<<"Hello world. This is a test" <<endl;
-	char question[100];
+	std::string question;
 	char* ans = new char[1];
-	cout <<"Ask me a Question: ";cin.getline(question,sizeof(question));
-	EST_String newQuestion = EST_String(question);
+	cout <<"Ask me a Question: ";getline(cin,question);
+	EST_String newQuestion = EST_String(question.c_str());
 	festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
 	cout << "y/n?"; cin >> ans;
 	ifstream inFile2;
-	inFile2.open("network/infoFiles/cURL.txt");	
+	std::string directory = "network/infoFiles/" + question + ".txt";
+	inFile2.open(directory.c_str());	
 	std::string information;
 	std::getline(inFile2,information);
 	std::cout << information << std::endl;
