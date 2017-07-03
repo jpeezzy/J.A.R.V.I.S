@@ -86,18 +86,18 @@ std::string websearch::cleanupInformation(std::string information)
 	//now we need to trim down the search (to the intro paragraph of the wikipedia article);
 	size_t position0 = s.find("This article",0); //gets rid of text on top of page
 	size_t position1 = s.find_first_of('\n', position0);
-	try{
 	s.erase(position0,position1);
-	} catch(const std::exception& e){}; //need this to be ignored if not there
-	size_t bioLength[] = {s.find(" is a",0), s.find(" are a",0), s.find(" was a",0), s.find(" were a", 0)};
-	size_t position = bioLength[0];
-	for(int x =1;x <sizeof(bioLength); x++)
-	{
-		position = (position < bioLength[x])? position: bioLength[x];
-//		std::cout << "Position is " << position <<  std::endl;
-	}
+	int[] size[] = [size.find(" is a",0)];
+	size_t position = (s.find(" is a",0)< s.find (" are a",0))?s.find(" is a" , 0): 
+						((s.find(" are a",0) < s.find(" was a",0))? s.find(" are a",0): 
+						 (s.find(" was a",0)< s.find(" were a",0))? s.find(" was a",0)
+						  : s.find(" were a",0));
+	std::cout << "size is " << s.find(" were a", 0) <<std::endl;
 		//we're probably goona have to make a comparison with which line is first is, who, were etc
 	size_t position2 = s.find('\n', position);
+	//s.erase(position2, std::string::npos);
+	//s.erase(0,position);
+	//std::cout << "Positio2: " << position2<<std::endl;
 	std::string newS = s.substr(position, position2-position);
 	//std::cout << newS << std::endl;
 	//std::cout<<"does it ever delete this article?"<<std::endl;

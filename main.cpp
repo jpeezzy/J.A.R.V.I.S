@@ -5,13 +5,14 @@
 #include "festival.h"
 #include <EST_String.h>
 #include <fstream> //not needed now, but maybe later
+#include "network/websearch.h"
 using namespace std;
 
 int main()
 {
 	ifstream inFile;
 	inFile.open("txtFiles/userInfo.txt");
-	cout << inFile << endl;
+	//cout << inFile << endl;
 	EST_Wave wave;
 	int heapsize = 21000000;
 	int load_init_size = 1;
@@ -49,11 +50,21 @@ int main()
 	cout << "y/n?"; cin >> ans;
 	ifstream inFile2;
 	std::string directory = "network/infoFiles/" + question + ".txt";
-	inFile2.open(directory.c_str());	
+	inFile2.open(directory.c_str());
+	EST_String realInfo; //what the machine will say
+	if(!inFile2)
+	{
+		websearch *curl = new websearch(question);
+		std::cout << curl -> getString()<< std::endl;;
+		realInfo = EST_String(curl->getString().c_str());
+	}
+	else if(inFile2)
+	{
 	std::string information;
 	std::getline(inFile2,information);
 	std::cout << information << std::endl;
-	EST_String realInfo = EST_String(information.c_str());
+	realInfo = EST_String(information.c_str());
+	}
 	festival_say_text(realInfo);
 	//make it so when you ask a question and they don't answer, ask them if they would like to google it.
 	//if yes, google and use the first question for an answer.
