@@ -32,10 +32,12 @@ size_t CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb,
 void websearch::storeInformation(std::string name,std::string information)
 {
 	//pushes stored information to a txt file so the main program can read it;
-	std::string textName = "infoFiles/" + name + ".txt";
+	std::string textName = "network/infoFiles/" + name + ".txt";
+	///std::cout << "stored information is called" << name << std::endl;
 	char* textNameReal = (char*)textName.c_str();
 	std::ofstream myfile(textNameReal);
 	myfile << information;
+	//std::cout << "does it store infomration???" << std::endl;
 	myfile.close();
 }
 
@@ -53,21 +55,24 @@ websearch::websearch(std::string topicName) {
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);//verify for https://
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);	
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
-	
+
 	result = curl_easy_perform(curl);
-	if(result != CURLE_OK)
-	{
-		fprintf(stderr, "curl_easy_perform() failed: %s\n",
+		(result!=CURLE_OK) && fprintf(stderr, "curl_easy_perform() failed: %s\n",
 				                    curl_easy_strerror(result));
-	}
 	curl_easy_cleanup(curl); //always cleanup
-	std::cout<<"PRINTING LINES NOW " << std::endl;
+	//std::cout<<"PRINTING LINES NOW " << std::endl;
 	//std::cout << s << std::endl;
-	s =cleanupInformation(s);
+	try{
+		s =cleanupInformation(s);
 	//now we must cleanup the string
+	} catch(const std::exception& e){
+		s = "I cannot find information you're looking for. please try again";
+		//std::cout <<"the page is not found. please try again" << std::endl;
+		//return;
+	}; //need this to be ignored if not there
 	//std::cout << s << std::endl; //maybe send s to an html file?
 	storeInformation(topic,s);
-	std::cout <<"PROGRAM DONE" <<std::endl;
+	//std::cout <<"PROGRAM DONE" <<std::endl;
 	//now separate the strings maybe using recursion ??? for loop seems better (remove tags)
 	//std::cout << "Position is at "<< position << std::endl;
 }

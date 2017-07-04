@@ -41,35 +41,41 @@ int main()
 		cout << realName << endl;
 		festival_say_text("Welcome back " + realName + ". What do you need?");
 	}
-	cout<<"Hello world. This is a test" <<endl;
+	//cout<<"Hello world. This is a test" <<endl;
 	std::string question;
 	char* ans = new char[1];
-	cout <<"Ask me a Question: ";getline(cin,question);
-	EST_String newQuestion = EST_String(question.c_str());
-	festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
-	cout << "y/n?"; cin >> ans;
-	ifstream inFile2;
-	std::string directory = "network/infoFiles/" + question + ".txt";
-	inFile2.open(directory.c_str());
-	EST_String realInfo; //what the machine will say
-	if(!inFile2)
+	inFile.close();
+	while(true)
 	{
-		websearch *curl = new websearch(question);
-		std::cout << curl -> getString()<< std::endl;;
-		realInfo = EST_String(curl->getString().c_str());
-	}
-	else if(inFile2)
-	{
-	std::string information;
-	std::getline(inFile2,information);
-	std::cout << information << std::endl;
-	realInfo = EST_String(information.c_str());
-	}
-	festival_say_text(realInfo);
+		ifstream inFile2;
+		cout <<"Ask me a Question: ";getline(cin,question);
+		EST_String newQuestion = EST_String(question.c_str());
+	//festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
+	//cout << "y/n?"; cin >> ans;
+		std::string directory = "network/infoFiles/" + question + ".txt";
+		inFile2.open(directory.c_str());
+		EST_String realInfo; //what the machine will say
+		if(!inFile2)
+		{
+			websearch *curl = new websearch(question);
+			std::cout << curl -> getString()<< std::endl;
+			realInfo = EST_String(curl->getString().c_str());
+			//continue;
+			 //need this to be ignored if not there
+		}
+		else if(inFile2)
+		{
+			std::string information;
+			std::getline(inFile2,information);
+			std::cout << information << std::endl;
+			realInfo = EST_String(information.c_str());
+		}
+		festival_say_text(realInfo);
 	//make it so when you ask a question and they don't answer, ask them if they would like to google it.
 	//if yes, google and use the first question for an answer.
 	//also, look for keywords when they ask something and store them with the answer in a text file somehow.
+		inFile2.close();
 	//e.g. ([weather,day] - current temperature and date);
-	inFile.close();
+	}
 	return 123;
 }
