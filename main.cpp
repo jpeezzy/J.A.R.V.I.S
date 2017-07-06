@@ -2,10 +2,12 @@
 //
 #include <iostream>
 #include "user.h"
+#include "personality/Personality.h"
 #include "festival.h"
 #include <EST_String.h>
 #include <fstream> //not needed now, but maybe later
 #include "network/websearch.h"
+#include <vector> 
 using namespace std;
 
 int main()
@@ -52,6 +54,7 @@ int main()
 		EST_String newQuestion = EST_String(question.c_str());
 	//festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
 	//cout << "y/n?"; cin >> ans;
+		question = Personality::getKeyWords(question);
 		std::string directory = "network/infoFiles/" + question + ".txt";
 		inFile2.open(directory.c_str());
 		EST_String realInfo; //what the machine will say
@@ -70,6 +73,7 @@ int main()
 			std::cout << information << std::endl;
 			realInfo = EST_String(information.c_str());
 		}
+		
 		festival_say_text(realInfo);
 	//make it so when you ask a question and they don't answer, ask them if they would like to google it.
 	//if yes, google and use the first question for an answer.
@@ -77,5 +81,26 @@ int main()
 		inFile2.close();
 	//e.g. ([weather,day] - current temperature and date);
 	}
+	//happiness meter maybe?? 
 	return 123;
 }
+
+
+std::string keyWords(std::string phrase){
+//trims the phrase to get keywords
+	std::vector<std::string> cutWords(10); //ordered by prominance
+	cutWords[0] = "the ";
+	cutWords[1] = "is ";
+	cutWords[2] = "what ";
+	cutWords[3] = "are ";
+	cutWords[4] = "who ";
+	cutWords[5] = "were ";
+	cutWords[6] = "when ";
+	cutWords[7] = "where ";
+	cutWords[8] = "why ";
+	for(int i =0; i < cutWords.size(); i++)
+	{
+		phrase.erase(phrase.find(cutWords[i]),cutWords[i].size());
+	}
+	return phrase; 
+} 
