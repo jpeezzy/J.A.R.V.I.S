@@ -1,0 +1,8 @@
+#ifndef 
+#define MUSIC_H
+
+//https://github.com/karlstav/cava
+//use vlc and cava to launch music 
+
+
+#endif
