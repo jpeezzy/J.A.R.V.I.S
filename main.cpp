@@ -63,7 +63,6 @@ int main()
 			websearch *curl = new websearch(question);
 			std::cout << curl -> getString()<< std::endl;
 			realInfo = EST_String(curl->getString().c_str());
-			//continue;
 			 //need this to be ignored if not there
 		}
 		else if(inFile2)

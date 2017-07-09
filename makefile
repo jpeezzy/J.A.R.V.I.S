@@ -1,9 +1,9 @@
-HEADER = ~/jarvis/festival/src/include/
-HEADER2 = ~/jarvis/speech_tools/include/
+HEADER = /usr/include/festival/
+HEADER2 = /usr/include/speech_tools/
 HEADER3 = ~/jarvis/network/
 HEADER4 = ~/jarvis/src/
-LINK1 = ~/jarvis/festival/src/lib/
-LINK2 = ~/jarvis/speech_tools/lib/
+LINK1 = /usr/lib/festival/
+LINK2 = /usr/lib/speech_tools/
 LINK3 = ~/jarvis/lib/
 LINK4 = ~/jarvis/src/
 test: $(HEADER) main.cpp
