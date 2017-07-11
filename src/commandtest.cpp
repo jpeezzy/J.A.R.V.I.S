@@ -4,6 +4,6 @@
 int main()
 {
 	commands test;
-	test.talk("Hello Justin. This is a default voice option");
+	test.intro();
 	return 0;
 }

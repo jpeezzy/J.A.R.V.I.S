@@ -4,25 +4,42 @@
 #include <unistd.h> /* for fork */
 #include <sys/types.h> /* for pid_t */
 #include <sys/wait.h> /* for wait */
-void music::playMusic(std::string FileName)
+#include <fstream>
+bool music::playMusic(std::string FileName)
 {
 	//char *const fakearg[1] = {};
 	std::cout << (char*)FileName.c_str() << std::endl;
-	char* const termArg[6] = {"gnome-terminal",  "--command", "cava", 0};
+	FileName= std::string(getenv("HOME")) + "/Music/" + FileName + "/";
+	char* const termArg[4] = {"gnome-terminal",  "--command", "cava", 0};
 	char* const ARGS[5] = {"vlc","-ZL", "--qt-start-minimized", (char*)FileName.c_str(), 0};
-	pid_t pid = fork(); //to create a child process 
-	//pid_t pid2 = fork();
-		//exit(127);
-	if (pid==0)
-	{//child process
-		std::cout <<"does it go here???" <<std::endl;
-		execv("/usr/bin/vlc", ARGS);
-		exit(127);
+	std::cout << FileName << std::endl;
+	
+	std::ifstream inFile; inFile.open(FileName.c_str());
+	if(!inFile)
+		return false; //if it can't find the file;
+
+
+	if(fork())
+	{
+		if(fork())
+		{
+
+		}
+		else
+		{
+			std::cout <<"does it launch vlc???" <<std::endl;
+			execv("/usr/bin/vlc", ARGS);
+			//execv("/usr/bin/gnome-terminal", termArg);
+			exit(EXIT_SUCCESS);
+		}
 	}
 	else
-    { /* pid!=0; parent process */
+	{
 		execv("/usr/bin/gnome-terminal", termArg);
-	           waitpid(pid,0,0); /* wait for child to exit */
+		std::cout << "does parent process touch here at music?" <<std::endl;
+		exit(EXIT_SUCCESS);
 	}
-	//system("vlc -ZL --qt-start-minimized ~/Music/MapleStory 2 BGM/");
+
+	//https://stackoverflow.com/questions/10909011/how-to-use-fork-to-create-only-2-child-processes
+	return true;
 }
