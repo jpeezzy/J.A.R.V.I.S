@@ -24,7 +24,7 @@ std::string Personality::getKeyWords(std::string phrase){
 	for(int i =0; i < cutWords.size(); i++)
 	{
 		try{
-	   		if(phrase.find(cutWords[i]) < phrase.length()/2 & phrase.length() > 10) 
+	   		if(phrase.find(cutWords[i]) < phrase.length()) 
 				(phrase.erase(phrase.find(cutWords[i]),cutWords[i].size()));
 		} catch(const std::out_of_range e ){};
 	}

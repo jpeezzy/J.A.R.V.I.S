@@ -24,3 +24,6 @@ https://wiki.archlinux.org/index.php/Festival#Can.27t_open_.2Fdev.2Fdsp
 6. get cava (equalizer that opens when you play music.)
 	https://github.com/karlstav/cava (if needed I can attach my config)
 
+7. for talking recognition (use pocketsphinx) 
+cmusphinx.github.io/wiki/tutorialpocketsphinx/
+follow the tutorial and youll be golden. 
