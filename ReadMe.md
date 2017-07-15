@@ -11,7 +11,7 @@ use this link to go to C/C++ api and check the samplecode/functions
 PROCEDURE:
 
 1. You will now need a few libraries you'll have to install on your own. Here is what you need: 
-sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc
+sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc festvox-en1
 (ubuntu) (You'll have to figure it out with your own unix distribution)
 
 2. after wards, make the rest of the files. This is crucial. After doing this, you should have a festival and speech folder filled with the libraries/speech api that I have. 

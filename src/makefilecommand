@@ -1,4 +1,4 @@
-
-asdf: 
+asdf: export MALLOC_CHECK_=0
+asdf:  
 	g++ -std=c++11 -g -I/usr/include/festival/ -I /usr/include/speech_tools/ commandtest.cpp network/websearch.cpp user.cpp commands.cpp Personality.cpp music.cpp -o asdf -L /usr/lib/festival/ -lFestival -L /usr/lib/speech_tools/ -ltermcap -lestools -lestbase -leststring -lncurses -lcurl -Wno-write-strings
 

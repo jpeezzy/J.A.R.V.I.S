@@ -16,7 +16,7 @@ commands::commands()
 	heapsize = 21000000;
 	load_init_size = 1; 
 	festival_initialize(load_init_size, heapsize);
-	festival_eval_command("(voice_kal_diphone)");
+	festival_eval_command("(voice_en1_mbrola)");
 }
 
 void commands::talk(EST_String text)

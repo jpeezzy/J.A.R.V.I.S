@@ -66,7 +66,8 @@ websearch::websearch(std::string topicName) {
 		s =cleanupInformation(s);
 	//now we must cleanup the string
 	} catch(const std::exception& e){
-		s = "I cannot find information you're looking for. please try again";
+		s = "I can't seem to find the information you are looking for. PLEASE try again sir.";
+		//pro tip: to pause the machine make your word all caps. 
 		//std::cout <<"the page is not found. please try again" << std::endl;
 		//return;
 	}; //need this to be ignored if not there
