@@ -10,14 +10,13 @@ bool music::playMusic(std::string FileName)
 	//char *const fakearg[1] = {};
 	std::cout << (char*)FileName.c_str() << std::endl;
 	FileName= std::string(getenv("HOME")) + "/Music/" + FileName + "/";
-	char* const termArg[4] = {"gnome-terminal",  "--command", "cava", 0};
-	char* const ARGS[5] = {"vlc","-ZL", "--qt-start-minimized", (char*)FileName.c_str(), 0};
+	char* const termArg[4] = {(char*)"gnome-terminal",  (char*)"--command", (char*)"cava", 0};
+	char* const ARGS[5] = {(char*)"vlc",(char*)"-ZL", (char*)"--qt-start-minimized", (char*)FileName.c_str(), 0};
 	std::cout << FileName << std::endl;
 	
 	std::ifstream inFile; inFile.open(FileName.c_str());
 	if(!inFile)
 		return false; //if it can't find the file;
-
 
 	if(fork())
 	{
@@ -42,4 +41,9 @@ bool music::playMusic(std::string FileName)
 
 	//https://stackoverflow.com/questions/10909011/how-to-use-fork-to-create-only-2-child-processes
 	return true;
+}
+
+void music::stopMusic()
+{
+	kill(0, SIGKILL); //child class 
 }

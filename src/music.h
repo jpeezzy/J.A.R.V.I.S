@@ -11,6 +11,6 @@ class music
 		static std::vector<std::string> genre; // http://id3.org/id3v2.3.0 list of genre and number
 	public:
 		static bool playMusic(std::string fileName); //plays music  
-	
+		static void stopMusic();	
 };
 #endif
