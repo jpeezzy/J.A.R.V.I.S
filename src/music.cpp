@@ -8,7 +8,7 @@
 bool music::playMusic(std::string FileName)
 {
 	//char *const fakearg[1] = {};
-	std::cout << (char*)FileName.c_str() << std::endl;
+	//std::cout << (char*)FileName.c_str() << std::endl;
 	FileName= std::string(getenv("HOME")) + "/Music/" + FileName + "/";
 	char* const termArg[4] = {(char*)"gnome-terminal",  (char*)"--command", (char*)"cava", 0};
 	char* const ARGS[5] = {(char*)"vlc",(char*)"-ZL", (char*)"--qt-start-minimized", (char*)FileName.c_str(), 0};
@@ -18,11 +18,12 @@ bool music::playMusic(std::string FileName)
 	if(!inFile)
 		return false; //if it can't find the file;
 
-	if(fork())
+	child1=fork();
+	if(child1)
 	{
-		if(fork())
+		child2=fork();
+		if(child2)
 		{
-
 		}
 		else
 		{
@@ -45,5 +46,7 @@ bool music::playMusic(std::string FileName)
 
 void music::stopMusic()
 {
-	kill(0, SIGKILL); //child class 
+	pid_t parent_pid = getpid();
+	kill(child1, SIGKILL); //child class 
+	kill(child2, SIGKILL);
 }

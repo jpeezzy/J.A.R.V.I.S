@@ -44,12 +44,14 @@ void myClock::startAlarm()
 {
 	if(alarmStart)
 	{
-			music::playMusic("Alarm");	
+			music c;
+			c.playMusic("Alarm");	
 			//alarmStart = false;
 	}
 }
 void myClock::endAlarm()
 {
-	music::stopMusic();
+	music c;
+	c.stopMusic();
 	alarmStart = false;
 }

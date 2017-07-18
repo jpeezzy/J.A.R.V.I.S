@@ -8,9 +8,11 @@
 class music
 {
 	private:
-		static std::vector<std::string> genre; // http://id3.org/id3v2.3.0 list of genre and number
+		std::vector<std::string> genre; // http://id3.org/id3v2.3.0 list of genre and number
+		pid_t child1;
+		pid_t child2; 
 	public:
-		static bool playMusic(std::string fileName); //plays music  
-		static void stopMusic();	
+		bool playMusic(std::string fileName); //plays music  
+		void stopMusic();	
 };
 #endif

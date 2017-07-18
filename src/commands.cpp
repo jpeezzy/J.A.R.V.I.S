@@ -20,15 +20,11 @@ commands::commands()
 	festival_initialize(load_init_size, heapsize);
 	festival_eval_command("(voice_en1_mbrola)");
 	//time = myClock();
-	std::vector<std::string> test = {"test"};
-	keyWords[test].noFunction = &commands::setAlarm;
-	void(commands::*pointtest)(void) = keyWords[test].noFunction;	
-	(*this.*pointtest)();
+	setMap();
 }
 
 void commands::talk(std::string text)
 {
-
 	festival_say_text(EST_String(text.c_str()));
 }
 
@@ -50,8 +46,8 @@ void commands::giveInfo(std::string question)
 	else
 	{
 		std::getline(inFile2,realInfo);
+		std::cout << realInfo << std::endl;
 	}
-	//std::cout << realInfo << std::endl;
 	talk(realInfo);
 }
 
@@ -96,21 +92,48 @@ void commands::idle()
 
 void commands::task(std::string question)
 {
-	if((question.find("play") != -1 & question.find("music") != -1))
+	std::vector<std::string> svect;
+	std::vector<std::string> saveVector;
+	bool phrase = false; 
+	for(std::map<std::vector<std::string>, mapTypes>::iterator it=keyWords.begin(); 
+			it != keyWords.end(); it++)
 	{
-		playMusic(question);
+		svect = it->first; 
+		//std::cout << svect.at(0) <<std::endl;
+		for(int i=0; i < it->first.size();i++)
+		{
+			if(question.find(svect.at(i)) != -1)
+			{
+				phrase = true;
+				saveVector = svect;  
+			}
+			else if(question.find(svect.at(i)) == -1)
+			{
+				phrase = false;
+				saveVector.clear();
+				break;
+			}
+		}
+		if(phrase)//if phrase is still correct at end of loop it is a valid phrase;
+		{
+			chooseFunct(keyWords[saveVector], question);
+			//(*this.*keyWords[saveVector].noFunction)();
+			break;
+		}
 	}
-	else if((question.find("who") !=-1) || (question.find("what") != -1))
-	{
-		giveInfo(question);
-	}
-	else if((question.find("set") !=-1 && question.find("alarm")!=-1))
-	{
-		setAlarm();
-	}
-	//else if((""))
+	if(!phrase) //if at the end phrase is false
+		talk("I do not understand your question. Please try again");
 }
 
+void commands::chooseFunct(mapTypes mapStruct, std::string question)
+{
+	if(mapStruct.noFunction!=NULL && mapStruct.strFunct != NULL)
+		(*this.*mapStruct.strFunct)(question);
+	else if(mapStruct.noFunction != NULL)
+		(*this.*mapStruct.noFunction)();
+	else if(mapStruct.strFunct != NULL)
+		(*this.*mapStruct.strFunct)(question);
+}
 void commands::setAlarm()
 {
 	talk("what time sir?");
@@ -138,11 +161,54 @@ void commands::playMusic(std::string question)
 		}catch(std::out_of_range e){std::cout <<"error at try" << std::endl;}// folder to search stuff in; 
 		//play some music
 		talk("Right away sir");
-		if(!music::playMusic(keyword))
+		if(!myTunes.playMusic(keyword))
 		{
 			talk("sir, there seems to be an issue with finding the music folders");
 		};
 		//idle();
 		//std::cout <<"does it get to end of plyamusic?" << std::endl;
- }	
-	//std::cout << "gets to task" << std::endl;
+ }
+
+void commands::playMusic()
+{
+	talk("right away sir");
+	myTunes.playMusic("");
+}
+
+void commands::stopMusic()
+{
+	myTunes.stopMusic();
+}
+void commands::setMap()
+{
+	std::vector<std::string> key(10);
+	//void(commands::*value)(void);
+	//(*this.*keyWords[test].noFunction)();
+	//std::vector<std::string> test = {"test", "test"};
+	//keyWords[vector<std::string>{"set", "alarm"}].noFunction = &commands::setAlarm;
+	abstractMap({"set", "alarm"}, &commands::setAlarm);
+	abstractMap({"play","music"}, &commands::playMusic);
+	abstractMap({"stop","music"}, &commands::stopMusic);
+	abstractMap({"meaning","life"}, &commands::meaningOfLife);
+	abstractMapStr({"what"}, &commands::giveInfo);
+	abstractMapStr({"who"}, &commands::giveInfo);
+	abstractMapStr({"play", "music"}, &commands::playMusic);
+	//abstractMap({"play","music"}, &commands::playMusic);
+	//void(commands::*pointtest)(void) = keyWords[test].noFunction;	
+}
+
+void commands::abstractMap(vector<std::string> key, void(commands::*value)(void))
+{
+	keyWords[key].noFunction = value; 
+}
+
+void commands::abstractMapStr(vector<std::string> key, void(commands::*value)(std::string))
+{
+	keyWords[key].strFunct = value; 
+}
+
+void commands::meaningOfLife()
+{
+	talk("its 42");
+	talk("DUMB SHIT");
+}

@@ -1,7 +1,7 @@
-what
-who 
-play music  
-stop music  
-meaning of life 
-set alarm  
+{"test", test"} &commands::setAlarm
+{"what"} &commands::setAlarm
+"who" &commands::setAlarm
+"play music"  &commands::playMusic
+"stop music"  &commands::stopMusic
+"set alarm" &commands::setAlarm  
 
