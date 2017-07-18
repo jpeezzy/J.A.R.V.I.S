@@ -2,6 +2,7 @@
 #define MYCLOCK_H
 #include <ctime>
 #include <iostream>
+#include <map>
 class myClock
 {
 	private:
@@ -10,6 +11,7 @@ class myClock
 		int alarmHour;
 		int alarmMinute;
 		bool alarmStart;
+		std::map<int,std::string> converter;
 	public:
 		myClock();
 		std::string getTime();

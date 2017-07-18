@@ -145,6 +145,10 @@ void commands::setAlarm()
 	talk("right away sir. your alarm is at" + std::to_string(hour) + std::to_string(minute));
 }
 
+void commands::getTime()
+{
+	talk("it is " + time.getTime());
+}
 void commands::playMusic(std::string question)
  {
 	 //e.g. string format: play some classical music. music is at the end, play is first
@@ -190,6 +194,7 @@ void commands::setMap()
 	abstractMap({"play","music"}, &commands::playMusic);
 	abstractMap({"stop","music"}, &commands::stopMusic);
 	abstractMap({"meaning","life"}, &commands::meaningOfLife);
+	abstractMap({"time"}, &commands::getTime);
 	abstractMapStr({"what"}, &commands::giveInfo);
 	abstractMapStr({"who"}, &commands::giveInfo);
 	abstractMapStr({"play", "music"}, &commands::playMusic);

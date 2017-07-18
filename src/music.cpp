@@ -36,7 +36,7 @@ bool music::playMusic(std::string FileName)
 	else
 	{
 		execv("/usr/bin/gnome-terminal", termArg);
-		std::cout << "does parent process touch here at music?" <<std::endl;
+		//std::cout << "does parent process touch here at music?" <<std::endl;
 		exit(EXIT_SUCCESS);
 	}
 

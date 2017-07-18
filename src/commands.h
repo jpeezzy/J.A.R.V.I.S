@@ -37,6 +37,7 @@ class commands{
 		void task(std::string question); // determines which task to do depending on input
 		void chooseFunct(mapTypes mapStruct, std::string question);
 		void setAlarm();
+		void getTime();//gets time 
 		void playMusic(std::string music); // plays music (can either be genre or artist);
 		void playMusic(); 
 		void stopMusic(); //kills music
