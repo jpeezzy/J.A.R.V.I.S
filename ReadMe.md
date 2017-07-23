@@ -21,8 +21,11 @@ sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc fe
 4. Afterwards, create a .festivalrc file and follow the steps below(the dsp/dev error)
 https://wiki.archlinux.org/index.php/Festival#Can.27t_open_.2Fdev.2Fdsp
 
-6. get cava (equalizer that opens when you play music.)
+6. get cava (equalizer that opens when you play music. will need
+sudo apt-get update
+sudo apt-get install m4 )
 	https://github.com/karlstav/cava (if needed I can attach my config)
+the best command line to use is urxvt for cava performance. you can get it in ubuntu using sudo apt install rxvt-unicode
 
 7. for talking recognition (use pocketsphinx) 
 cmusphinx.github.io/wiki/tutorialpocketsphinx/

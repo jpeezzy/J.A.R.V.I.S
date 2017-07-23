@@ -12,6 +12,7 @@
 #include <ctype.h>
 #include "network/websearch.h"
 #include "myClock.h"
+#include <thread>
 //typedef void(*)(void) function1;
 commands::commands()
 {
@@ -139,16 +140,21 @@ void commands::setAlarm()
 	talk("what time sir?");
 	int hour;
 	int minute;
+	std::string AP;
 	std::cin >>  hour; 
-	std::cin >>  minute; 
-	time.setAlarm(hour, minute);
+	std::cin >>  minute;
+	std::cin >> AP;
 	talk("right away sir. your alarm is at" + std::to_string(hour) + std::to_string(minute));
+	std::thread t1(&myClock::setAlarm, this->time, hour, minute, AP);
+	t1.detach();
 }
 
 void commands::getTime()
 {
 	talk("it is " + time.getTime());
 }
+
+
 void commands::playMusic(std::string question)
  {
 	 //e.g. string format: play some classical music. music is at the end, play is first

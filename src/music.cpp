@@ -10,7 +10,8 @@ bool music::playMusic(std::string FileName)
 	//char *const fakearg[1] = {};
 	//std::cout << (char*)FileName.c_str() << std::endl;
 	FileName= std::string(getenv("HOME")) + "/Music/" + FileName + "/";
-	char* const termArg[4] = {(char*)"gnome-terminal",  (char*)"--command", (char*)"cava", 0};
+	//char* const termArg[4] = {(char*)"gnome-terminal",  (char*)"--command", (char*)"cava", 0};
+	char* const termArg[9] = {(char*)"urxvt", (char*)"-geometry", (char*) "500x500", (char*)"-depth", (char*)"32", (char*)"-bg",(char*) "rgba:0000/0000/0001/cccc", (char*)"-e", (char*)"cava" };
 	char* const ARGS[5] = {(char*)"vlc",(char*)"-ZL", (char*)"--qt-start-minimized", (char*)FileName.c_str(), 0};
 	std::cout << FileName << std::endl;
 	
@@ -35,7 +36,7 @@ bool music::playMusic(std::string FileName)
 	}
 	else
 	{
-		execv("/usr/bin/gnome-terminal", termArg);
+		execv("/usr/bin/urxvt", termArg);
 		//std::cout << "does parent process touch here at music?" <<std::endl;
 		exit(EXIT_SUCCESS);
 	}

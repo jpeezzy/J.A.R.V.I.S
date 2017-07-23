@@ -57,18 +57,17 @@ bool myClock::checkAlarm()
 }
 void myClock::setAlarm(int _alarmHour, int _alarmMinute, std::string AP)
 {
-	if(AP.compare("pm")==0)
+	if(AP.compare("pm"))
 	{
 		alarmHour=_alarmHour+12;
 	}
 	else
 		alarmHour=_alarmHour;
 	alarmMinute = _alarmMinute;
-	//alarmAP = AP;
+	alarmAP = AP;
 //	std::thread t1(&myClock::waitAlarm, this);
 	//t1.join();
-	//std::cout <<"alarm hour is " << alarmHour << std::endl;
-	//std::cout <<"alarm min" << alarmMinute << std::endl;
+	cout <<"alarm hour is " << alarmHour << std::endl;
 	waitAlarm();
 }
 
@@ -77,11 +76,9 @@ void myClock::waitAlarm()
 	//.setalarm(8, 30);
 	while(!checkAlarm())
 	{
-		this->getTime();
 		usleep(1000000);
-		//std::cout << now->tm_hour << " "<< now->tm_min << std::endl;
+		std::cout <<now->tm_hour << std::endl;
 	}
-	//std::cout <<"exits loop???" << std::endl;
 	startAlarm();
 }
 
@@ -93,7 +90,6 @@ void myClock::startAlarm()
 			c.playMusic("");	
 			//alarmStart = false;
 	}
-	//this->join();
 }
 void myClock::endAlarm()
 {

@@ -51,7 +51,7 @@ websearch::websearch(std::string topicName) {
 	curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 	std::cout << "URL IS " << url << std::endl;
 	//curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com/search?q=curl&oq=curl+&aqs=chrome..69i57j69i60l5.1389j0j7&client=ubuntu&sourceid=chrome&ie=UTF-8");
-	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L); //verify for https://
+	//curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L); //verify for https://
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);//verify for https://
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);	
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
@@ -94,13 +94,14 @@ std::string websearch::cleanupInformation(std::string information)
 	size_t position1 = s.find_first_of('\n', position0);
 	try{
 	s.erase(position0,position1);
-	} catch(const std::exception& e){}; //need this to be ignored if not there
+	} catch(const std::exception& e){}; //need this to be ignored if not theri
+	//std::cout << s <<std::endl;
 	size_t bioLength[] = {s.find(" is a",0), s.find(" are a",0), s.find(" was a",0), s.find(" were a", 0)};
 	size_t position = bioLength[0];
-	for(int x =1;x <sizeof(bioLength); x++)
+	for(int x =1; x <sizeof(bioLength)/sizeof(*bioLength); x++)
 	{
 		position = (position < bioLength[x])? position: bioLength[x];
-//		std::cout << "Position is " << position <<  std::endl;
+		//std::cout << "Position for is a is " << position <<  std::endl;
 	}
 		//we're probably goona have to make a comparison with which line is first is, who, were etc
 	size_t position2 = s.find('\n', position);
@@ -143,6 +144,8 @@ std::string websearch::cleanupInformation(std::string information)
 		else
 			i++;
 	}
+
+	//std::cout << newS << std::endl;
 	i = 0;
 	while( i< size)
 	{

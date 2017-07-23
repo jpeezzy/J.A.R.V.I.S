@@ -1,0 +1,7 @@
+
+ do this in bash:
+ export LD_LIBRARY_PATH=/usr/local/lib
+ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+dependencies:
+libsphinxbase-dev sphinxbase-utils libpocketsphinx-dev pocketsphinx pocketsphinx-en-us
