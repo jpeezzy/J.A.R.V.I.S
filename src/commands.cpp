@@ -20,7 +20,7 @@ commands::commands()
 	load_init_size = 1; 
 	festival_initialize(load_init_size, heapsize);
 	festival_eval_command("(voice_en1_mbrola)");
-	//time = myClock();
+	//myTime = myClock();
 	setMap();
 }
 
@@ -84,9 +84,11 @@ void commands::idle()
 	{
 		ifstream inFile2;
 		cout <<"Ask me a Question: ";getline(cin,question);
-		EST_String newQuestion = EST_String(question.c_str());
+		//EST_String newQuestion = EST_String(question.c_str());
 	//festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
 	//cout << "y/n?"; cin >> ans;
+		if(question.empty())
+			continue;
 		task(question);
 	}
 }
@@ -145,38 +147,43 @@ void commands::setAlarm()
 	std::cin >>  minute;
 	std::cin >> AP;
 	talk("right away sir. your alarm is at" + std::to_string(hour) + std::to_string(minute));
-	std::thread t1(&myClock::setAlarm, this->time, hour, minute, AP);
-	t1.detach();
+	//myTime.setAlarm(hour, minute, AP);
+	clockThread = std::thread(&myClock::setAlarm, &myTime, hour, minute, AP); //use &myTime instead of myTime. if you do'nt thread will make an extra copy of it :/
 }
-
+void commands::endAlarm() 
+{
+	myTime.endAlarm();
+	clockThread.join();
+}
 void commands::getTime()
 {
-	talk("it is " + time.getTime());
+	talk("it is " + myTime.getTime());
 }
 
 
 void commands::playMusic(std::string question)
  {
+	 unique_lock<mutex> lock(_mutex); //synchronize equivalent
 	 //e.g. string format: play some classical music. music is at the end, play is first
 //http://id3lib.sourceforge.net/ may use this later to actually get metadata. 
-		std::string keyword = question; //foflder to search for music
-		try{
-		keyword.erase(keyword.find("play"), 4);	
-		//std::cout << keyword << std::endl;
-		keyword.erase(keyword.find("music"),5); 
-		//std::cout << keyword << std::endl;
-		keyword.erase(std::remove_if(keyword.begin(),keyword.end(), ::isspace), keyword.end());
-		keyword.erase(keyword.find("some"),4);
-		//std::cout << keyword << std::endl;
-		}catch(std::out_of_range e){std::cout <<"error at try" << std::endl;}// folder to search stuff in; 
-		//play some music
-		talk("Right away sir");
-		if(!myTunes.playMusic(keyword))
-		{
-			talk("sir, there seems to be an issue with finding the music folders");
-		};
-		//idle();
-		//std::cout <<"does it get to end of plyamusic?" << std::endl;
+	std::string keyword = question; //foflder to search for music
+	try{
+	keyword.erase(keyword.find("play"), 4);	
+	//std::cout << keyword << std::endl;
+	keyword.erase(keyword.find("music"),5); 
+	//std::cout << keyword << std::endl;
+	keyword.erase(std::remove_if(keyword.begin(),keyword.end(), ::isspace), keyword.end());
+	keyword.erase(keyword.find("some"),4);
+	//std::cout << keyword << std::endl;
+	}catch(std::out_of_range e){std::cout <<"error at try" << std::endl;}// folder to search stuff in; 
+	//play some music
+	talk("Right away sir");
+	if(!myTunes.playMusic(keyword))
+	{
+		talk("sir, there seems to be an issue with finding the music folders");
+	};
+	//idle();
+	//std::cout <<"does it get to end of plyamusic?" << std::endl;
  }
 
 void commands::playMusic()
@@ -197,6 +204,7 @@ void commands::setMap()
 	//std::vector<std::string> test = {"test", "test"};
 	//keyWords[vector<std::string>{"set", "alarm"}].noFunction = &commands::setAlarm;
 	abstractMap({"set", "alarm"}, &commands::setAlarm);
+	abstractMap({"stop", "alarm"}, &commands::endAlarm);
 	abstractMap({"play","music"}, &commands::playMusic);
 	abstractMap({"stop","music"}, &commands::stopMusic);
 	abstractMap({"meaning","life"}, &commands::meaningOfLife);

@@ -10,24 +10,28 @@
 #include <map>
 #include <vector>
 #include <thread>
+#include <mutex>
 class commands{
 	private:
 		//typedef void(*function)(void) function1;
 		//using func_t = void (*)(void); 
 		int heapsize;
 		int load_init_size;
-		myClock time;
+		myClock myTime;
 		music myTunes;
+		mutex _mutex;
 		struct mapTypes
 		{
 			void(commands::*noFunction)(void)=NULL;
 			void(commands::*strFunct)(std::string) = NULL;
 		};
 		std::map<std::vector<std::string>, mapTypes>  keyWords;
+		std::thread clockThread;	
 		void setMap(); //sets map to proper values from txt file
 		void setVector();//gets string from txt file and adds them to vector of stringi
 		void abstractMap(vector<std::string> key, void(commands::*value)(void)); //abstracts adding values to map for programmer
 		void abstractMapStr(vector<std::string> key, void(commands::*value)(std::string));
+		void endAlarm();
 	public:
 		commands(); //constructor, sets parameters and intializes festival voices
 		void talk(std::string text);

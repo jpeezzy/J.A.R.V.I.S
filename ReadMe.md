@@ -16,6 +16,9 @@ sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc fe
 
 2. after wards, make the rest of the files. This is crucial. After doing this, you should have a festival and speech folder filled with the libraries/speech api that I have. 
 
+THIS ONLY WORKS FOR 64 BIT CURRENTLY (WILL TRY TO WORKON 32 BIT MAYBE?)
+
+
 3. use my make file and cpp file to make sound come out. 
 
 4. Afterwards, create a .festivalrc file and follow the steps below(the dsp/dev error)

@@ -12,7 +12,7 @@ bool music::playMusic(std::string FileName)
 	FileName= std::string(getenv("HOME")) + "/Music/" + FileName + "/";
 	//char* const termArg[4] = {(char*)"gnome-terminal",  (char*)"--command", (char*)"cava", 0};
 	char* const termArg[9] = {(char*)"urxvt", (char*)"-geometry", (char*) "500x500", (char*)"-depth", (char*)"32", (char*)"-bg",(char*) "rgba:0000/0000/0001/cccc", (char*)"-e", (char*)"cava" };
-	char* const ARGS[5] = {(char*)"vlc",(char*)"-ZL", (char*)"--qt-start-minimized", (char*)FileName.c_str(), 0};
+	char* const ARGS[6] = {(char*)"vlc",(char*)"-ZL", (char*)"--qt-start-minimized", (char*)FileName.c_str(), (char*)"--quiet", 0};
 	std::cout << FileName << std::endl;
 	
 	std::ifstream inFile; inFile.open(FileName.c_str());

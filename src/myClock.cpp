@@ -9,14 +9,14 @@
 #include <thread>
 myClock::myClock()
 {
-		t = time(0);
-		now = localtime(&t);
-		usleep(1000);
-		std::ifstream infile("txtFiles/converter.txt");
-		int key;
-		std::string value;
-		while(infile >> key >> value)
-			converter[key]=value;
+	t = time(0);
+	now = localtime(&t);
+	usleep(1000);
+	std::ifstream infile("txtFiles/converter.txt");
+	int key;
+	std::string value;
+	while(infile >> key >> value)
+		converter[key]=value;
 }
 std::string myClock::getTime()
 {
@@ -28,9 +28,15 @@ std::string myClock::getTime()
 	{
 		hour=hour-12;
 		ap = "P. M";
-	}//std::cout<< "time is " << (converter[now->tm_hour] + converter[now->tm_min]) <<std::endl;
+	}
 	return (converter[hour] + ". " + converter[now->tm_min] + ". "+  ap);
 	//return (std::to_string(now->tm_hour) + ":" + std::to_string(now->tm_min) + ":" +  std::to_string(now->tm_sec)); 
+}
+
+std::string myClock::getAlarmTime()
+{
+	std::cout <<  alarmHour << std::endl;
+	return (converter[alarmHour] + ". " + converter[alarmMinute] + "." + alarmAP);
 }
 
 std::string numToWord(int x)
@@ -52,7 +58,6 @@ bool myClock::checkAlarm()
 			return alarmStart =true; 
 		}
 	}
-	//std::cout <<"does it return false?" << std::endl;
 	return false; 
 }
 void myClock::setAlarm(int _alarmHour, int _alarmMinute, std::string AP)
@@ -64,24 +69,17 @@ void myClock::setAlarm(int _alarmHour, int _alarmMinute, std::string AP)
 	else
 		alarmHour=_alarmHour;
 	alarmMinute = _alarmMinute;
-	//alarmAP = AP;
-//	std::thread t1(&myClock::waitAlarm, this);
-	//t1.join();
-	//std::cout <<"alarm hour is " << alarmHour << std::endl;
-	//std::cout <<"alarm min" << alarmMinute << std::endl;
+	alarmAP = AP;
 	waitAlarm();
 }
 
 void myClock::waitAlarm()
 {
-	//.setalarm(8, 30);
 	while(!checkAlarm())
 	{
 		this->getTime();
 		usleep(1000000);
-		//std::cout << now->tm_hour << " "<< now->tm_min << std::endl;
 	}
-	//std::cout <<"exits loop???" << std::endl;
 	startAlarm();
 }
 
@@ -89,15 +87,11 @@ void myClock::startAlarm()
 {
 	if(alarmStart)
 	{
-			music c;
-			c.playMusic("");	
-			//alarmStart = false;
+		alarmSound.playMusic("");	
 	}
-	//this->join();
 }
 void myClock::endAlarm()
 {
-	music c;
-	c.stopMusic();
+	alarmSound.stopMusic();
 	alarmStart = false;
 }
