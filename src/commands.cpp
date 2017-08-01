@@ -22,6 +22,9 @@ commands::commands()
 	festival_eval_command("(voice_en1_mbrola)");
 	//myTime = myClock();
 	setMap();
+
+	/*THREAD TO CONSTANTLY CHECK TO LAUNCH ALARM */ 
+	clockThread = std::thread(&myClock::waitAlarm, &myTime); //use &myTime instead of myTime. if you do'nt thread will make an extra copy of it :/
 }
 
 void commands::talk(std::string text)
@@ -153,7 +156,12 @@ void commands::setAlarm()
 void commands::endAlarm() 
 {
 	myTime.endAlarm();
-	clockThread.join();
+	//clockThread.join();
+}
+
+void commands::showAlarmTime()
+{
+	myTime.getAlarmTime();
 }
 void commands::getTime()
 {
@@ -209,10 +217,10 @@ void commands::setMap()
 	abstractMap({"stop","music"}, &commands::stopMusic);
 	abstractMap({"meaning","life"}, &commands::meaningOfLife);
 	abstractMap({"time"}, &commands::getTime);
+	abstractMap({ "alarm", "time"}, &commands::showAlarmTime);
 	abstractMapStr({"what"}, &commands::giveInfo);
 	abstractMapStr({"who"}, &commands::giveInfo);
-	abstractMapStr({"play", "music"}, &commands::playMusic);
-	//abstractMap({"play","music"}, &commands::playMusic);
+	abstractMap({"play","music"}, &commands::playMusic);
 	//void(commands::*pointtest)(void) = keyWords[test].noFunction;	
 }
 

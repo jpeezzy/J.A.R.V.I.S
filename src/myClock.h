@@ -15,6 +15,10 @@ class myClock
 		bool alarmStart;
 		std::map<int,std::string> converter;
 		music alarmSound;
+		std::map<int, std::string> alarmTime;
+		/***these fucntions have to do with time and alarms */
+		//void getAlarmTime();
+		/******************/
 	public:
 		myClock();
 		std::string getTime();

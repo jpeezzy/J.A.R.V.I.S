@@ -1,0 +1,9 @@
+1841 1234567
+0900 135
+1030 2467
+
+usage:
+time day
+e.g. 1 is mon,2 is tuesday, etc. make sure to keep a space 
+between the last alarm date and "usage"
+

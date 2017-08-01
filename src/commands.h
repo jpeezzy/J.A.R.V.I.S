@@ -26,12 +26,15 @@ class commands{
 			void(commands::*strFunct)(std::string) = NULL;
 		};
 		std::map<std::vector<std::string>, mapTypes>  keyWords;
-		std::thread clockThread;	
+		std::thread clockThread;
+		/*******************THESE METHODS DO WITH TIME/ALARM*/
+		void showAlarmTime();
+		void endAlarm();
+		/**************************************/
 		void setMap(); //sets map to proper values from txt file
 		void setVector();//gets string from txt file and adds them to vector of stringi
 		void abstractMap(vector<std::string> key, void(commands::*value)(void)); //abstracts adding values to map for programmer
 		void abstractMapStr(vector<std::string> key, void(commands::*value)(std::string));
-		void endAlarm();
 	public:
 		commands(); //constructor, sets parameters and intializes festival voices
 		void talk(std::string text);
