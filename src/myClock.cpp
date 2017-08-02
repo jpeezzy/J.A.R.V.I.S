@@ -44,7 +44,6 @@ std::string myClock::getAlarmTime()
 
 	for(std::map<int,std::string>::const_iterator it = alarmTime.begin(); it!= alarmTime.end(); it++)
 	{
-		
 		std::cout<<(it->first)/100 << ":" << it->first%100 << " " << it->second << std::endl;
 	}
 	
@@ -69,9 +68,9 @@ bool myClock::checkAlarm()
 	{
 		if(now->tm_hour == (it->first)/100)
 		{
-			if(now->tm_min == it->first%100 && !alarmStart)
+			if(now->tm_min == it->first%100)
 			{
-				return alarmStart=true; 
+				return true; 
 			}
 		}
 	}
@@ -94,39 +93,47 @@ void myClock::setAlarm(int _alarmHour, int _alarmMinute, std::string AP)
 		alarmHour=_alarmHour;
 
 	alarmMinute = _alarmMinute;
-
-	alarmTime[_alarmHour*100 + _alarmMinute] = "1234567";
-
+	int tempTime = alarmHour*100 + alarmMinute;
+	alarmTime[tempTime] = "1234567";
+	std::ofstream outfile;
+	outfile.open("txtFiles/alarmTime.txt", std::ofstream::out | std::ofstream::app);
+	
+	outfile << std::to_string(tempTime)<< " " << alarmTime[tempTime] <<std::endl;
 	alarmAP = AP;
-	waitAlarm();
+	outfile.close();
+	//waitAlarm();
+	return;
 }
 
 void myClock::waitAlarm()
 {
 	while(true)
 	{
-		if(!checkAlarm())
+		if(alarmStart | !checkAlarm())
 		{
-		this->getTime();
-		usleep(1000000);
+			this->getTime();
+			usleep(1000000);
+			if(!checkAlarm())
+			{
+				alarmStart=false;
+			}
 		}
 		else
+		{
 			startAlarm();
+			alarmStart = true;
+		}
 	}
 	//startAlarm();
 }
 
 void myClock::startAlarm()
 {
-	if(alarmStart)
-	{
 		alarmSound.playMusic("");	
-	}
 }
 
 void myClock::endAlarm()
 {
 	alarmSound.stopMusic();
-	alarmStart = false;
-	usleep(60000000);
+	//usleep(60000000);
 }

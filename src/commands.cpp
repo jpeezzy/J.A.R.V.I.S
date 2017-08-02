@@ -150,13 +150,12 @@ void commands::setAlarm()
 	std::cin >>  minute;
 	std::cin >> AP;
 	talk("right away sir. your alarm is at" + std::to_string(hour) + std::to_string(minute));
-	//myTime.setAlarm(hour, minute, AP);
-	clockThread = std::thread(&myClock::setAlarm, &myTime, hour, minute, AP); //use &myTime instead of myTime. if you do'nt thread will make an extra copy of it :/
+	myTime.setAlarm(hour, minute, AP);
+	//clockThread = std::thread(&myClock::setAlarm, &myTime, hour, minute, AP); //use &myTime instead of myTime. if you do'nt thread will make an extra copy of it :/
 }
 void commands::endAlarm() 
 {
 	myTime.endAlarm();
-	//clockThread.join();
 }
 
 void commands::showAlarmTime()
