@@ -1,0 +1,23 @@
+#include "simplemenu.h"
+
+int main(int argc, char* argv[])
+{
+	QApplication app(argc,argv);
+
+	SimpleMenu window;
+	//window.resize(250,150);
+	window.setWindowTitle("jarvis?");
+	window.setWindowIcon(QIcon("test.png"));
+	window.setToolTip("Testing toooltip");
+	window.showFullScreen(); //launches application full screen 
+
+	return app.exec();
+}
+
+
+MainWindow:MainWindow(QWidget* parent) : 
+	QMainWindow(parent),
+	ui(new Ui::MainWindow)
+{
+	ui-> setupUi
+}
