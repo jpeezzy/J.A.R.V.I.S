@@ -13,10 +13,11 @@ SimpleMenu::SimpleMenu(QWidget *parent)
 	//text is QLabel pointer that prints a string to screen
 	text = new QLabel("Hello World!", this);
 	text->setAlignment(Qt::AlignCenter);
+	text->setWordWrap(true);
 
 	//makes text font bigger 
 	QFont font = text->font();
-	font.setPointSize(72);
+	font.setPointSize(60);
 	font.setBold(true);
 	text->setFont(font);
 
@@ -30,7 +31,7 @@ SimpleMenu::SimpleMenu(QWidget *parent)
 	//this shows the text box for inputting commands; 
 	textBox = new QLineEdit;
 	textBox->setPlaceholderText("input commands here");
-	
+	textBox->setMaxLength(30);
 //This sets the layout where text is showed on top of the input text box;  
 	QGridLayout *layout = new QGridLayout; 
 	layout->addWidget(text);
@@ -49,5 +50,6 @@ SimpleMenu::SimpleMenu(QWidget *parent)
 	//this connects text box with the enter key, hopefully sending the message to the main program.
 	//we do this by using connect, and using a functor(object that can be used () like a function
 	connect(textBox, &QLineEdit::returnPressed, text, [this]{text->setText(textBox->text());});
+	connect(textBox, &QLineEdit::returnPressed, textBox, &QLineEdit::clear);
 }
 
