@@ -1,18 +1,10 @@
 //COMMAND CLASS, TELLS THE AI WHAT TO DO 
 
 #include "commands.h" 
-#include <iostream>
-#include <fstream>
-#include <festival.h> 
-#include <EST_String.h>
 #include "user.h"
 #include "Personality.h"
-#include "music.h"
 #include <algorithm>
 #include <ctype.h>
-#include "network/websearch.h"
-#include "myClock.h"
-#include <thread>
 //typedef void(*)(void) function1;
 commands::commands()
 {

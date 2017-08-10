@@ -1,16 +1,16 @@
 #ifndef COMMANDS_H
 #define COMMANDS_H
 
-#include <iostream>
-#include <festival.h>
 #include <EST_String.h>
-#include "network/websearch.h"
-#include "myClock.h"
-#include "music.h"
+#include <festival.h>
+#include <iostream>
 #include <map>
-#include <vector>
-#include <thread>
+#include "music.h"
 #include <mutex>
+#include "myClock.h"
+#include "network/websearch.h"
+#include <thread>
+#include <vector>
 class commands{
 	private:
 		//typedef void(*function)(void) function1;

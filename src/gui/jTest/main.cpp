@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 	QApplication app(argc,argv);
 
 	SimpleMenu window;
-	//window.resize(250,150);
+	//window.resize(1000,1000);
 
 	window.setWindowTitle("jarvis?");
 	window.setWindowIcon(QIcon("test.png"));

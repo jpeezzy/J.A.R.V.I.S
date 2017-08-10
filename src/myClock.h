@@ -1,7 +1,6 @@
 #ifndef MYCLOCK_H
 #define MYCLOCK_H
 #include <ctime>
-#include <iostream>
 #include <map>
 #include "music.h"
 class myClock

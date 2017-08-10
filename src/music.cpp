@@ -1,6 +1,5 @@
 #include "music.h"
 #include <stdlib.h> 
-#include <iostream>
 #include <unistd.h> /* for fork */
 #include <sys/types.h> /* for pid_t */
 #include <sys/wait.h> /* for wait */

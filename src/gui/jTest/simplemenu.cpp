@@ -49,7 +49,25 @@ SimpleMenu::SimpleMenu(QWidget *parent)
 
 	//this connects text box with the enter key, hopefully sending the message to the main program.
 	//we do this by using connect, and using a functor(object that can be used () like a function
+	
+	//this connect sends the text from the text box into a std::string that can be send to the backend
+	connect(textBox, &QLineEdit::returnPressed, textBox, [this]{commandToString(textBox->text());});
+
 	connect(textBox, &QLineEdit::returnPressed, text, [this]{text->setText(textBox->text());});
 	connect(textBox, &QLineEdit::returnPressed, textBox, &QLineEdit::clear);
+
+	/*this connect sends the text to backend (will do Later) */
+}
+
+std::string SimpleMenu::getText()
+{
+	return textCommand; 
+}
+
+void SimpleMenu::commandToString(QString qText)
+{
+	//textCommand = qText.toStdString();
+	textCommand = qText.toUtf8().constData();
+	//std::cout << "WORD THAT IS PRINTED IS " << textCommand << std::endl;
 }
 
