@@ -1,9 +1,13 @@
-#include "simplemenu.h"
+#include "gui/simplemenu.h"
+#include "commands.h"
 #include <QFile>
+
 int main(int argc, char* argv[])
 {
 	QApplication app(argc,argv);
 
+	commands test;
+	test.intro();
 	SimpleMenu window;
 	//window.resize(1000,1000);
 
