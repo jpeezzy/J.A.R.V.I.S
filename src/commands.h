@@ -14,7 +14,7 @@
 class commands{
 	private:
 		//typedef void(*function)(void) function1;
-		//using func_t = void (*)(void); 
+		//using func_t = void (*)(void);
 		int heapsize;
 		int load_init_size;
 		myClock myTime;
@@ -41,6 +41,11 @@ class commands{
 		void giveInfo(std::string question); //gives information when asked
 		void intro(); //goes when the user is new. asks for name/age
 		//void converse(std::string input); //this if for WAY LATER;may depend on personality.  
+		/***this is the function that grabs information from gui and stores the question so command can process*/
+		bool checkQuestion();// checks to see if question is not duplicate
+		void storeQuestion(std::string _question);
+		std::string question;
+		/////////////////////////////////////////////////////////////////////////////
 		void idle(); //state where user inputs a question and then this calls task  
 		void task(std::string question); // determines which task to do depending on input
 		void chooseFunct(mapTypes mapStruct, std::string question);

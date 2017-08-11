@@ -54,7 +54,7 @@ SOURCES       = commands.cpp \
 		myClock.cpp \
 		Personality.cpp \
 		user.cpp \
-		simplemenu.cpp \
+		gui/simplemenu.cpp \
 		network/websearch.cpp 
 OBJECTS       = commands.o \
 		main.o \
@@ -366,7 +366,7 @@ commands.o: commands.cpp commands.h \
 		Personality.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o commands.o commands.cpp
 
-main.o: main.cpp simplemenu.h \
+main.o: main.cpp gui/simplemenu.h \
 		commands.h \
 		music.h \
 		myClock.h \
@@ -386,8 +386,8 @@ Personality.o: Personality.cpp Personality.h
 user.o: user.cpp user.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o user.cpp
 
-simplemenu.o: simplemenu.cpp simplemenu.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplemenu.o simplemenu.cpp
+simplemenu.o: gui/simplemenu.cpp gui/simplemenu.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplemenu.o gui/simplemenu.cpp
 
 websearch.o: network/websearch.cpp network/websearch.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o websearch.o network/websearch.cpp

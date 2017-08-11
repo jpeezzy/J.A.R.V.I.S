@@ -5,13 +5,14 @@
 #include "Personality.h"
 #include <algorithm>
 #include <ctype.h>
+#include <simplemenu.h> //gui that lets user send information to backend;
 //typedef void(*)(void) function1;
+#include <mutex> //std::mutex, std::unique_lock
+#include <condition_variable> //std::condition_variable
 commands::commands()
 {
 	heapsize = 21000000;
 	load_init_size = 1; 
-	festival_initialize(load_init_size, heapsize);
-	festival_eval_command("(voice_en1_mbrola)");
 	//myTime = myClock();
 	setMap();
 
@@ -49,6 +50,8 @@ void commands::giveInfo(std::string question)
 
 void commands::intro()
 {
+	festival_initialize(load_init_size, heapsize);
+	festival_eval_command("(voice_en1_mbrola)"); //festival must be initialized here or you get error when multithreading
 	ifstream inFile;
 	inFile.open("txtFiles/userInfo.txt");
 	if(!inFile)
@@ -74,22 +77,45 @@ void commands::intro()
 
 void commands::idle() 
 {
-	std::string question; 
+	std::mutex mtx;
+	std::condition_variable cv;
+	std::unique_lock<std::mutex> lck(mtx);
+	//question = "a";
 	while(true)
 	{
-		ifstream inFile2;
-		cout <<"Ask me a Question: ";getline(cin,question);
+		//cv.wait(lck, [this]{return !question.compare(qTemp);}); 
+		if(question.compare(""))
+		{
+			std::cout <<"gets to while loop" << std::endl;
+			qTemp = question;
+			task(question);
+			question = ""; //resets question after finishing
+		}
+		//cv = std::condition_variable{};
+		//mtx = std::mutex{};
+		//lck = std::unique_lock{mtx};
+		//ifstream inFile2;
+//		cout <<"Ask me a Question: ";getline(cin,question);
 		//EST_String newQuestion = EST_String(question.c_str());
 	//festival_say_text("I do not understand your question:. " + newQuestion + ". Would you like me to google it?");
 	//cout << "y/n?"; cin >> ans;
-		if(question.empty())
-			continue;
-		task(question);
 	}
 }
 
+bool commands::checkQuestion()
+{
+	return question.compare(qTemp) == 0;	
+}
+void commands::storeQuestion(std::string _question)
+{
+	question = _question;
+	//task(question);
+};
+
 void commands::task(std::string question)
 {
+	if(question.empty())
+		return;
 	std::vector<std::string> svect;
 	std::vector<std::string> saveVector;
 	bool phrase = false; 

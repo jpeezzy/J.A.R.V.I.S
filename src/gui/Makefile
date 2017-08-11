@@ -332,7 +332,7 @@ compiler_clean:
 
 ####### Compile
 
-main.o: main.cpp simplemenu.h
+main.o: main.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 simplemenu.o: simplemenu.cpp simplemenu.h
