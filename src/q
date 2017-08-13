@@ -1,0 +1,68 @@
+XDG-OPEN(1)                                                                           xdg-open Manual                                                                           XDG-OPEN(1)
+
+NNAAMMEE
+       xdg-open - opens a file or URL in the user's preferred application
+
+SSYYNNOOPPSSIISS
+       xxddgg--ooppeenn {_f_i_l_e | _U_R_L}
+
+       xxddgg--ooppeenn {----hheellpp | ----mmaannuuaall | ----vveerrssiioonn}
+
+DDEESSCCRRIIPPTTIIOONN
+       xdg-open opens a file or URL in the user's preferred application. If a URL is provided the URL will be opened in the user's preferred web browser. If a file is provided the file
+       will be opened in the preferred application for files of that type. xdg-open supports file, ftp, http and https URLs.
+
+       xdg-open is for use inside a desktop session only. It is not recommended to use xdg-open as root.
+
+OOPPTTIIOONNSS
+       ----hheellpp
+           Show command synopsis.
+
+       ----mmaannuuaall
+           Show this manual page.
+
+       ----vveerrssiioonn
+           Show the xdg-utils version information.
+
+EEXXIITT CCOODDEESS
+       An exit code of 0 indicates success while a non-zero exit code indicates failure. The following failure codes can be returned:
+
+       11
+           Error in command line syntax.
+
+       22
+           One of the files passed on the command line did not exist.
+
+       33
+           A required tool could not be found.
+
+       44
+           The action failed.
+
+SSEEEE AALLSSOO
+       xxddgg--mmiimmee(1), xxddgg--sseettttiinnggss(1), MMIIMMEE aapppplliiccaattiioonnss aassssoocciiaattiioonnss ssppeecciiffiiccaattiioonn[1]
+
+EEXXAAMMPPLLEESS
+           xdg-open 'http://www.freedesktop.org/'
+
+       Opens the freedesktop.org website in the user's default browser.
+
+           xdg-open /tmp/foobar.png
+
+       Opens the PNG image file /tmp/foobar.png in the user's default image viewing application.
+
+AAUUTTHHOORRSS
+       KKeevviinn KKrraammmmeerr
+           Author.
+
+       JJeerreemmyy WWhhiittee
+           Author.
+
+CCOOPPYYRRIIGGHHTT
+       Copyright © 2006
+
+NNOOTTEESS
+        1. MIME applications associations specification
+           http://www.freedesktop.org/wiki/Specifications/mime-apps-spec/
+
+xdg-utils 1.0                                                                            09/29/2016                                                                             XDG-OPEN(1)

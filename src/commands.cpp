@@ -1,5 +1,4 @@
 //COMMAND CLASS, TELLS THE AI WHAT TO DO 
-
 #include "commands.h" 
 #include "user.h"
 #include "Personality.h"
@@ -9,13 +8,13 @@
 //typedef void(*)(void) function1;
 #include <mutex> //std::mutex, std::unique_lock
 #include <condition_variable> //std::condition_variable
+
 commands::commands()
 {
 	heapsize = 21000000;
 	load_init_size = 1; 
 	//myTime = myClock();
 	setMap();
-
 	/*THREAD TO CONSTANTLY CHECK TO LAUNCH ALARM */ 
 	clockThread = std::thread(&myClock::waitAlarm, &myTime); //use &myTime instead of myTime. if you do'nt thread will make an extra copy of it :/
 }
@@ -87,10 +86,13 @@ void commands::idle()
 		if(question.compare(""))
 		{
 			std::cout <<"gets to while loop" << std::endl;
-			qTemp = question;
 			task(question);
 			question = ""; //resets question after finishing
 		}
+		else 
+		{
+			usleep(1000000);
+		}			
 		//cv = std::condition_variable{};
 		//mtx = std::mutex{};
 		//lck = std::unique_lock{mtx};
@@ -102,10 +104,6 @@ void commands::idle()
 	}
 }
 
-bool commands::checkQuestion()
-{
-	return question.compare(qTemp) == 0;	
-}
 void commands::storeQuestion(std::string _question)
 {
 	question = _question;
@@ -146,7 +144,11 @@ void commands::task(std::string question)
 		}
 	}
 	if(!phrase) //if at the end phrase is false
-		talk("I do not understand your question. Please try again");
+	{
+		talk("I do not understand your question.");
+		talk(question);
+		talk("Please try again");
+	}
 }
 
 void commands::chooseFunct(mapTypes mapStruct, std::string question)
@@ -235,6 +237,10 @@ void commands::setMap()
 	abstractMap({"meaning","life"}, &commands::meaningOfLife);
 	abstractMap({"time"}, &commands::getTime);
 	abstractMap({ "alarm", "time"}, &commands::showAlarmTime);
+
+	//this funcitonn will hopefully play Youtube 
+	abstractMap({"youtube"}, &commands::youtube); 
+	/////
 	abstractMapStr({"what"}, &commands::giveInfo);
 	abstractMapStr({"who"}, &commands::giveInfo);
 	abstractMap({"play","music"}, &commands::playMusic);
@@ -255,4 +261,9 @@ void commands::meaningOfLife()
 {
 	talk("its 42");
 	talk("DUMB SHIT");
+}
+
+void commands::youtube()
+{
+
 }

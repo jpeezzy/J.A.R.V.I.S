@@ -35,6 +35,9 @@ class commands{
 		void setVector();//gets string from txt file and adds them to vector of stringi
 		void abstractMap(vector<std::string> key, void(commands::*value)(void)); //abstracts adding values to map for programmer
 		void abstractMapStr(vector<std::string> key, void(commands::*value)(std::string));
+		//YOUTUBE
+		void youtube(); 
+		//
 	public:
 		commands(); //constructor, sets parameters and intializes festival voices
 		void talk(std::string text);
