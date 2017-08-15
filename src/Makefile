@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -m64 -pipe -pthread -g -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -m64 -std=c++11 -pthread -g -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/usr/include/festival/ -I/usr/include/speech_tools/
+DEFINES       = -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+CFLAGS        = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+INCPATH       = -I. -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimediaWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/usr/include/festival/ -I/usr/include/speech_tools/ -I Music/ -I Clock/ -I network/
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -35,8 +35,8 @@ COMPRESS      = gzip -9f
 DISTNAME      = src1.0.0
 DISTDIR = /home/masa/jarvis/src/.tmp/src1.0.0
 LINK          = g++
-LFLAGS        = -m64 -Wl,-O1
-LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread -L /usr/lib/festival/ -lFestival -L /usr/lib/speech_tools/ -ltermcap -lestools -lestbase -leststring -lncurses -lcurl -Wno-write-strings
+LFLAGS        = -m64 -Wl,-O1 -Wl,-rpath-link,/usr/lib/x86_64-linux-gnu
+LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5MultimediaWidgets -lQt5Widgets -lQt5Multimedia -lQt5Gui -lQt5Network -lQt5Core -lGL -lpthread -L /usr/lib/festival/ -lFestival -L /usr/lib/speech_tools/ -ltermcap -lestools -lestbase -leststring -lncurses -lcurl -Wno-write-strings 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -50,12 +50,13 @@ OBJECTS_DIR   = ./
 
 SOURCES       = commands.cpp \
 		main.cpp \
-		music.cpp \
-		myClock.cpp \
+		Music/music.cpp \
+		Clock/myClock.cpp \
 		Personality.cpp \
 		user.cpp \
 		simplemenu.cpp \
-		network/websearch.cpp 
+		network/websearch.cpp \
+		network/internet.cpp
 OBJECTS       = commands.o \
 		main.o \
 		music.o \
@@ -63,7 +64,8 @@ OBJECTS       = commands.o \
 		Personality.o \
 		user.o \
 		simplemenu.o \
-		websearch.o
+		websearch.o \
+		internet.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -132,21 +134,21 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		src.pro commands.h \
-		music.h \
-		myClock.h \
+		Music/music.h \
+		Clock/myClock.h \
 		Personality.h \
 		user.h \
-		gui/simplemenu.h \
-		network/websearch.h commands.cpp \
-		commandtest.cpp \
+		simplemenu.h \
+		network/websearch.h \
+		network/internet.h commands.cpp \
 		main.cpp \
-		music.cpp \
-		myClock.cpp \
+		Music/music.cpp \
+		Clock/myClock.cpp \
 		Personality.cpp \
 		user.cpp \
-		gui/simplemenu.cpp \
-		network/test.cpp \
-		network/websearch.cpp
+		simplemenu.cpp \
+		network/websearch.cpp \
+		network/internet.cpp
 QMAKE_TARGET  = src
 DESTDIR       = 
 TARGET        = src
@@ -226,8 +228,11 @@ Makefile: src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf 
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		src.pro \
+		/usr/lib/x86_64-linux-gnu/libQt5MultimediaWidgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
+		/usr/lib/x86_64-linux-gnu/libQt5Multimedia.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
+		/usr/lib/x86_64-linux-gnu/libQt5Network.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
 	$(QMAKE) -o Makefile src.pro
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf:
@@ -298,8 +303,11 @@ Makefile: src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf 
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 src.pro:
+/usr/lib/x86_64-linux-gnu/libQt5MultimediaWidgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
+/usr/lib/x86_64-linux-gnu/libQt5Multimedia.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
+/usr/lib/x86_64-linux-gnu/libQt5Network.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile src.pro
@@ -316,7 +324,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents commands.h music.h myClock.h Personality.h user.h gui/simplemenu.h network/websearch.h $(DISTDIR)/
-	$(COPY_FILE) --parents commands.cpp commandtest.cpp main.cpp music.cpp myClock.cpp Personality.cpp user.cpp gui/simplemenu.cpp network/test.cpp network/websearch.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents commands.cpp main.cpp music.cpp myClock.cpp Personality.cpp user.cpp gui/simplemenu.cpp network/test.cpp network/websearch.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -359,26 +367,32 @@ compiler_clean:
 ####### Compile
 
 commands.o: commands.cpp commands.h \
-		music.h \
-		myClock.h \
+		Music/music.h \
+		Clock/myClock.h \
 		network/websearch.h \
+		network/internet.h \
 		user.h \
-		Personality.h
+		Personality.h \
+		simplemenu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o commands.o commands.cpp
+
+internet.o: network/internet.cpp network/internet.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o internet.o network/internet.cpp
 
 main.o: main.cpp simplemenu.h \
 		commands.h \
-		music.h \
-		myClock.h \
-		network/websearch.h
+		Music/music.h \
+		Clock/myClock.h \
+		network/websearch.h \
+		network/internet.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-music.o: music.cpp music.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o music.o music.cpp
+music.o: Music/music.cpp Music/music.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o music.o Music/music.cpp
 
-myClock.o: myClock.cpp myClock.h \
-		music.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o myClock.o myClock.cpp
+myClock.o: Clock/myClock.cpp Clock/myClock.h \
+		Music/music.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o myClock.o Clock/myClock.cpp
 
 Personality.o: Personality.cpp Personality.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Personality.o Personality.cpp
@@ -386,7 +400,11 @@ Personality.o: Personality.cpp Personality.h
 user.o: user.cpp user.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o user.cpp
 
-simplemenu.o: simplemenu.cpp simplemenu.h
+simplemenu.o: simplemenu.cpp simplemenu.h \
+		commands.h \
+		Music/music.h \
+		Clock/myClock.h \
+		network/websearch.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplemenu.o simplemenu.cpp
 
 websearch.o: network/websearch.cpp network/websearch.h

@@ -3,6 +3,7 @@
 
 #include <EST_String.h>
 #include <festival.h>
+#include "internet.h"//internet();
 #include <iostream>
 #include <map>
 #include "music.h"
@@ -17,6 +18,7 @@ class commands{
 		//using func_t = void (*)(void);
 		int heapsize;
 		int load_init_size;
+		internet www; 
 		myClock myTime;
 		music myTunes;
 		mutex _mutex;
@@ -36,6 +38,7 @@ class commands{
 		void abstractMap(vector<std::string> key, void(commands::*value)(void)); //abstracts adding values to map for programmer
 		void abstractMapStr(vector<std::string> key, void(commands::*value)(std::string));
 		//YOUTUBE
+		void launchBrowser(std::string Query);//launches web browser;
 		void youtube(); 
 		//
 	public:

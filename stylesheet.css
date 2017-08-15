@@ -1,0 +1,8 @@
+QMainWindow { 
+/*	background-image: url("space.jpg");*/
+	background-color: black;
+	border-image: url("earth.jpg") 30 stretch; /*border image allows you to scale picture*/
+	background-position:center;
+/*	min-width: 100%;*/
+/*	height:auto;*/
+}

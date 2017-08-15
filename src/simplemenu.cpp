@@ -6,11 +6,22 @@
 #include <QGridLayout>
 #include <QFont>
 SimpleMenu::SimpleMenu(QWidget *parent)
-	: QMainWindow(parent)
+	: QMainWindow(parent) //QVideoWidget(parent) 
 {
-	/*this connect sends the text to backend (will do Later) */
-	//jarvis.talk("does this even work?");
-	std::cout <<"does it try to talk?>" << std::endl;
+	//this parts sets up animated background 
+/*	player = new QMediaPlayer;
+	playlist = new QMediaPlaylist(player);
+	playlist->addMedia(QUrl::fromLocalFile(QFileInfo("/home/masa/jarvis/src/space.mp4").absoluteFilePath()));
+	playlist->setPlaybackMode(QMediaPlaylist::Loop);
+	videoWidget = new QVideoWidget;
+	player->setVideoOutput(videoWidget);
+	player->setPlaylist(playlist);
+	videoWidget->showFullScreen();
+	playlist->setCurrentIndex(1);
+//	player->play(); */
+	//
+	//thread that controls the backend;
+
 	jarvisThread = std::thread(&commands::intro, &jarvis);
 
 	//jarvis.detatch();
@@ -20,6 +31,12 @@ SimpleMenu::SimpleMenu(QWidget *parent)
 	text = new QLabel("Hello World!", this);
 	text->setAlignment(Qt::AlignCenter);
 	text->setWordWrap(true);
+
+//	text->show();
+//	text->activateWindow();
+//	text->raise();
+//	text->setAttribute(Qt::WA_TranslucentBackground);
+	//text->setStyleSheet("background:transparent;");
 
 	//makes text font bigger 
 	QFont font = text->font();
@@ -38,21 +55,32 @@ SimpleMenu::SimpleMenu(QWidget *parent)
 	textBox = new QLineEdit;
 	textBox->setPlaceholderText("input commands here");
 	textBox->setMaxLength(30);
+	textBox->show();
+	textBox->activateWindow();
+//	textbox->setAttribute(Qt::WA_TranslucentBackground);
+//	textbox->setStyleSheet("background:transparent;");
+
 //This sets the layout where text is showed on top of the input text box;  
-	QGridLayout *layout = new QGridLayout; 
+	QGridLayout *layout = new QGridLayout;
+//	layout-> addWidget(videoWidget);
 	layout->addWidget(text);
 	layout->addWidget(textBox,1,0);
+//	videoWidget->stackUnder(text);
+//	text->raise();
+//	textBox->raise();
+
 	QWidget *window = new QWidget();
 	window->setLayout(layout);	
 	this->setCentralWidget(window);
 	
-	//this adds file button on top of application;
+//	layout->addWidget(text);
+//this adds file button on top of application;
 	QMenu *file;
 	file = menuBar() -> addMenu("&File"); //Qmenuobject
 	file->addAction(quit);//adds the option "quit under file menu" 
-
+	
 	connect(quit, &QAction::triggered, qApp, QApplication::quit);//when quit is slelected, app closes
-
+//	connect(quit, &QAction::triggered, qApp, [this]{;});
 	//this connects text box with the enter key, hopefully sending the message to the main program.
 	//we do this by using connect, and using a functor(object that can be used () like a function
 	

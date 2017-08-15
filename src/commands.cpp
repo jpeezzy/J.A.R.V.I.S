@@ -8,7 +8,6 @@
 //typedef void(*)(void) function1;
 #include <mutex> //std::mutex, std::unique_lock
 #include <condition_variable> //std::condition_variable
-
 commands::commands()
 {
 	heapsize = 21000000;
@@ -44,6 +43,7 @@ void commands::giveInfo(std::string question)
 		std::getline(inFile2,realInfo);
 		std::cout << realInfo << std::endl;
 	}
+	www(question); //searches the question, opening a web browser
 	talk(realInfo);
 }
 
@@ -238,8 +238,8 @@ void commands::setMap()
 	abstractMap({"time"}, &commands::getTime);
 	abstractMap({ "alarm", "time"}, &commands::showAlarmTime);
 
-	//this funcitonn will hopefully play Youtube 
-	abstractMap({"youtube"}, &commands::youtube); 
+	//this funcitonn will hopefully use the internet 
+	abstractMapStr({"go to"}, &commands::launchBrowser); 
 	/////
 	abstractMapStr({"what"}, &commands::giveInfo);
 	abstractMapStr({"who"}, &commands::giveInfo);
@@ -263,7 +263,8 @@ void commands::meaningOfLife()
 	talk("DUMB SHIT");
 }
 
-void commands::youtube()
+void commands::launchBrowser(std::string Query)
 {
-
+	Query.erase(Query.find("go to "), 6);
+	www(Query);
 }

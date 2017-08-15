@@ -12,10 +12,9 @@ HEADERS += commands.h \
            myClock.h \
            Personality.h \
            user.h \
-           gui/simplemenu.h \
+           simplemenu.h \
            network/websearch.h
 SOURCES += commands.cpp \
-           commandtest.cpp \
            main.cpp \
            music.cpp \
            myClock.cpp \
@@ -25,4 +24,4 @@ SOURCES += commands.cpp \
            network/test.cpp \
            network/websearch.cpp
 
-QT += widgets gui core
+QT += widgets gui core multimedia multimediawidgets

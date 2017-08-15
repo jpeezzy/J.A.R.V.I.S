@@ -6,6 +6,8 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QLineEdit>
+#include <QtMultimedia> //play music
+#include <QtMultimediaWidgets>
 class SimpleMenu : public QMainWindow{
 
 	public:
@@ -15,6 +17,9 @@ class SimpleMenu : public QMainWindow{
 	private:
 		QLabel *text;
 		QLineEdit *textBox;
+		QMediaPlayer *player;
+		QMediaPlaylist *playlist;
+		QVideoWidget *videoWidget;
 		std::string textCommand;
 		commands jarvis;
 		std::thread jarvisThread;
