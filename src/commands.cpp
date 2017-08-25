@@ -85,7 +85,7 @@ void commands::idle()
 		//cv.wait(lck, [this]{return !question.compare(qTemp);}); 
 		if(question.compare(""))
 		{
-			std::cout <<"gets to while loop" << std::endl;
+//			std::cout <<"gets to while loop" << std::endl;
 			task(question);
 			question = ""; //resets question after finishing
 		}
@@ -225,6 +225,7 @@ void commands::stopMusic()
 }
 void commands::setMap()
 {
+	void(*noFunction)(void) = NULL;
 	std::vector<std::string> key(10);
 	//void(commands::*value)(void);
 	//(*this.*keyWords[test].noFunction)();
@@ -237,7 +238,7 @@ void commands::setMap()
 	abstractMap({"meaning","life"}, &commands::meaningOfLife);
 	abstractMap({"time"}, &commands::getTime);
 	abstractMap({ "alarm", "time"}, &commands::showAlarmTime);
-
+	abstractMap({"hello"}, &commands::greeting);
 	//this funcitonn will hopefully use the internet 
 	abstractMapStr({"go to"}, &commands::launchBrowser); 
 	/////
@@ -261,6 +262,12 @@ void commands::meaningOfLife()
 {
 	talk("its 42");
 	talk("DUMB SHIT");
+}
+
+void commands::greeting()
+{
+	talk("Hello.");
+	talk("Jarvis here.");
 }
 
 void commands::launchBrowser(std::string Query)

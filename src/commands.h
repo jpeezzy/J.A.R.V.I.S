@@ -26,6 +26,7 @@ class commands{
 		{
 			void(commands::*noFunction)(void)=NULL;
 			void(commands::*strFunct)(std::string) = NULL;
+		//	void(commands::*txtFunct)(void) = NULL;
 		};
 		std::map<std::vector<std::string>, mapTypes>  keyWords;
 		std::thread clockThread;
@@ -60,7 +61,9 @@ class commands{
 		void playMusic(std::string music); // plays music (can either be genre or artist);
 		void playMusic(); 
 		void stopMusic(); //kills music
+		//miscellaneous
 		void meaningOfLife();
+		void greeting();
 };
 
 #endif

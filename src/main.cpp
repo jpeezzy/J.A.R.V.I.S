@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 //	window.resize(1000,1000);
 
 	window.setWindowTitle("jarvis?");
-	window.setWindowIcon(QIcon("gui/test.png"));
+	window.setWindowIcon(QIcon("test.png"));
 	window.setToolTip("Testing toooltip");
 	window.showFullScreen(); //launches application full screen 
 	//window.show();
