@@ -41,22 +41,12 @@ void websearch::storeInformation(std::string name,std::string information)
 	myfile.close();
 }
 
-websearch::websearch()
-{}
-
 websearch::websearch(std::string topicName){
-}
-
-void websearch::searchTopic(std::string topicName)
-{
-	topicHolder.clear(); //clears temp after starting another search
 	topic = topicName;
-
+	s;
     CURL* curl;		    
 	CURLcode result; //will give you error code if getting informaiton fails
 	curl = curl_easy_init();
-
-	//Checks wikipedia for an article to search from
 	std::string url = "https://en.wikipedia.org/wiki/" + topicName + "?%20action=render"; 
 	curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 	std::cout << "URL IS " << url << std::endl;
@@ -64,7 +54,7 @@ void websearch::searchTopic(std::string topicName)
 	//curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L); //verify for https://
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);//verify for https://
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);	
-	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &topicHolder);
+	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
 
 	result = curl_easy_perform(curl);
 		(result!=CURLE_OK) && fprintf(stderr, "curl_easy_perform() failed: %s\n",
@@ -73,19 +63,54 @@ void websearch::searchTopic(std::string topicName)
 	//std::cout<<"PRINTING LINES NOW " << std::endl;
 	//std::cout << s << std::endl;
 	try{
-		topicHolder =cleanupInformation(topicHolder);
-		this->browser("https://en.wikipedia.org/wiki/" + topicName);
+		s =cleanupInformation(s);
 	//now we must cleanup the string
 	} catch(const std::exception& e){
-		topicHolder = "Here is a web search of your topic.  " + topic;
-		this->operator() (topic);	
+		s = "I can't seem to find the information you are looking for. PLEASE try again sir.";
 		//pro tip: to pause the machine make your word all caps. 
 		//std::cout <<"the page is not found. please try again" << std::endl;
 		//return;
-
 	}; //need this to be ignored if not there
 	//std::cout << s << std::endl; //maybe send s to an html file?
-	storeInformation(topic,topicHolder);
+	storeInformation(topic,s);
+	//std::cout <<"PROGRAM DONE" <<std::endl;
+	//now separate the strings maybe using recursion ??? for loop seems better (remove tags)
+	//std::cout << "Position is at "<< position << std::endl;
+}
+
+void websearch::searchTopic(std::string topicName)
+{
+	topic = topicName;
+	s;
+    CURL* curl;		    
+	CURLcode result; //will give you error code if getting informaiton fails
+	curl = curl_easy_init();
+	std::string url = "https://en.wikipedia.org/wiki/" + topicName + "?%20action=render"; 
+	curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+	std::cout << "URL IS " << url << std::endl;
+	//curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com/search?q=curl&oq=curl+&aqs=chrome..69i57j69i60l5.1389j0j7&client=ubuntu&sourceid=chrome&ie=UTF-8");
+	//curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L); //verify for https://
+	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);//verify for https://
+	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);	
+	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
+
+	result = curl_easy_perform(curl);
+		(result!=CURLE_OK) && fprintf(stderr, "curl_easy_perform() failed: %s\n",
+				                    curl_easy_strerror(result));
+	curl_easy_cleanup(curl); //always cleanup
+	//std::cout<<"PRINTING LINES NOW " << std::endl;
+	//std::cout << s << std::endl;
+	try{
+		s =cleanupInformation(s);
+	//now we must cleanup the string
+	} catch(const std::exception& e){
+		s = "I can't seem to find the information you are looking for. PLEASE try again sir.";
+		//pro tip: to pause the machine make your word all caps. 
+		//std::cout <<"the page is not found. please try again" << std::endl;
+		//return;
+	}; //need this to be ignored if not there
+	//std::cout << s << std::endl; //maybe send s to an html file?
+	storeInformation(topic,s);
 	//std::cout <<"PROGRAM DONE" <<std::endl;
 	//now separate the strings maybe using recursion ??? for loop seems better (remove tags)
 	//std::cout << "Position is at "<< position << std::endl;
@@ -94,7 +119,7 @@ void websearch::searchTopic(std::string topicName)
 
 std::string websearch::getString()
 {
-	return topicHolder; 
+	return s; 
 }
 std::string websearch::cleanupInformation(std::string information)
 {
@@ -104,13 +129,13 @@ std::string websearch::cleanupInformation(std::string information)
 	couples['['] = ']';
 
 	//now we need to trim down the search (to the intro paragraph of the wikipedia article);
-	size_t position0 = topicHolder.find("This article",0); //gets rid of text on top of page
-	size_t position1 = topicHolder.find_first_of('\n', position0);
+	size_t position0 = s.find("This article",0); //gets rid of text on top of page
+	size_t position1 = s.find_first_of('\n', position0);
 	try{
-	topicHolder.erase(position0,position1);
+	s.erase(position0,position1);
 	} catch(const std::exception& e){}; //need this to be ignored if not theri
 	//std::cout << s <<std::endl;
-	size_t bioLength[] = {topicHolder.find(" is a",0), topicHolder.find(" are a",0), topicHolder.find(" was a",0), topicHolder.find(" were a", 0)};
+	size_t bioLength[] = {s.find(" is a",0), s.find(" are a",0), s.find(" was a",0), s.find(" were a", 0)};
 	size_t position = bioLength[0];
 	for(int x =1; x <sizeof(bioLength)/sizeof(*bioLength); x++)
 	{
@@ -118,8 +143,8 @@ std::string websearch::cleanupInformation(std::string information)
 		//std::cout << "Position for is a is " << position <<  std::endl;
 	}
 		//we're probably goona have to make a comparison with which line is first is, who, were etc
-	size_t position2 = topicHolder.find('\n', position);
-	std::string newS = topicHolder.substr(position, position2-position);
+	size_t position2 = s.find('\n', position);
+	std::string newS = s.substr(position, position2-position);
 	//std::cout << newS << std::endl;
 	//std::cout<<"does it ever delete this article?"<<std::endl;
 	int i = 0;

@@ -10,16 +10,22 @@
 #include <sys/types.h> /* for pid_t */
 #include <sys/wait.h> /* for wait */
 #include <map>
+#include <curl/curl.h> ///for CURL
 class internet
 {
 	private:
 		pid_t child1;
 		std::ifstream inFile;
-		std::map<std::string, std::string> sites; 
+		std::map<std::string, std::string> sites;
 	public:
 		internet();
+		void browser(std::string website); //opens browser;
 		std::string websiteURL(std::string website); //gets phrase and finds website;
-
+		void websearch();
+		std::string getText(std::string url); //should return all words from a website;
+		void checkLocation(); //sees where you are from txt file(); 
+		std::string weather(); //gets the weather 
+		std::string whatToWear(); //what to wear based on weather
 	//	void launchReddit(); //launches reddit
 	//	void launchYoutube(); //launches youtube on chrome
 	//	maybe use a functor to launch a web page
@@ -33,11 +39,7 @@ class internet
 			}
 			else
 			{
-				char* const args[3] = {(char*)"xdg-open", (char*)website.c_str(), (char*)0}; 
-				execv("/usr/bin/xdg-open", args);
-				//execv("/usr/bin/xdg-open", (char* const*)website.c_str());
-				//std::cout <<(char*)website.c_str() << std::endl;
-				exit(EXIT_SUCCESS);
+				browser(website);
 			}
 		}; //function that launches based on website;
 
