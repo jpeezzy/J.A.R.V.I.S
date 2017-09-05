@@ -1,6 +1,6 @@
 commandTest: export MALLOC_CHECK_=0
 commandTest:   
-	g++ -std=c++11 -pthread -g -I/usr/include/festival/ -I /usr/include/speech_tools/ commandtest.cpp network/websearch.cpp user.cpp commands.cpp Personality.cpp music.cpp myClock.cpp -o commandTest -L /usr/lib/festival/ -lFestival -L /usr/lib/speech_tools/ -ltermcap -lestools -lestbase -leststring -lncurses -lcurl -Wno-write-strings
+	g++ -std=c++11 -pthread -g -I/usr/include/festival/ -I /usr/include/speech_tools/ -I network/ -I Music/ -I Clock/ commandtest.cpp network/websearch.cpp network/internet.cpp user.cpp commands.cpp Personality.cpp Music/music.cpp Clock/myClock.cpp -o commandTest -L /usr/lib/festival/ -lFestival -L /usr/lib/speech_tools/ -ltermcap -lestools -lestbase -leststring -lncurses -lcurl -Wno-write-strings
 
 
 myClass:
