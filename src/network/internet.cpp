@@ -49,7 +49,6 @@ size_t CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb,
 	return size*nmemb;
 }
 
-
 std::string internet::getText(std::string url)
 {
 	std::string text;
@@ -73,3 +72,13 @@ std::string internet::getText(std::string url)
 	return text;
 }
 
+
+std::string internet::checkLocation() //gets current location based on ip address
+{
+
+}
+std::string internet::weather() 
+{
+	std::string Location = checkLocation(); //find out location based on ip address
+	getText("http://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=13098574849c3ecded8a4fc7d0e2ab4c&units=imperial");
+}
