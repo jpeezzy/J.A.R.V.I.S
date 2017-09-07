@@ -10,6 +10,7 @@
 #include <condition_variable> //std::condition_variable
 commands::commands()
 {
+	wiki = new websearch();
 	heapsize = 21000000;
 	load_init_size = 1; 
 	//myTime = myClock();
@@ -33,9 +34,11 @@ void commands::giveInfo(std::string question)
 	std::string realInfo; //what the machine will say
 	if(!inFile2)
 	{
-		websearch *curl = new websearch(question);
-		std::cout << curl -> getString()<< std::endl;
-		realInfo = curl->getString();
+		//wiki = new websearch();
+		//websearch *curl = new websearch(question);
+		wiki->searchTopic(question);
+		//std::cout << curl -> getString()<< std::endl;
+		realInfo = wiki->getString();
 		 //need this to be ignored if not there
 	}
 	else

@@ -22,6 +22,7 @@ class commands{
 		myClock myTime;
 		music myTunes;
 		mutex _mutex;
+		websearch *wiki;
 		struct mapTypes
 		{
 			void(commands::*noFunction)(void)=NULL;

@@ -11,7 +11,8 @@
 #include <sys/wait.h> /* for wait */
 #include <map>
 #include <curl/curl.h> ///for CURL
-class internet
+#include "json.hpp" //json parser
+class internet 
 {
 	private:
 		pid_t child1;

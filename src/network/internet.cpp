@@ -75,10 +75,18 @@ std::string internet::getText(std::string url)
 
 std::string internet::getLocation() //gets current location based on ip address
 {
-	return getText("http://freegeoip.net/json/"); //keep in mind you only get 15000 of these an hour 
+	nlohmann::json jLocation;
+	std::string location= getText("http://freegeoip.net/json/");
+	jLocation = nlohmann::json::parse(location);
+	//jLocation.parse(location);
+	return jLocation["city"];//keep in mind you only get 15000 of these an hour 
 }
 std::string internet::weather() 
 {
-	std::string Location = getLocation(); //find out location based on ip address
-	getText("http://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=13098574849c3ecded8a4fc7d0e2ab4c&units=imperial");
+	nlohmann::json jWeather;
+	std::string Location = getLocation();
+	std::string weatherData = getText("http://api.openweathermap.org/data/2.5/weather?q=" + Location + "&appid=13098574849c3ecded8a4fc7d0e2ab4c&units=imperial");
+	jWeather = nlohmann::json::parse(weatherData);
+	return jWeather["main"]["temp"].dump(); //dump sends information as string 
+	//you can use 2d arrays if parsing contains key within a key 
 }
