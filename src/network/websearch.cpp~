@@ -63,7 +63,7 @@ void websearch::searchTopic(std::string topicName)
 	//curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com/search?q=curl&oq=curl+&aqs=chrome..69i57j69i60l5.1389j0j7&client=ubuntu&sourceid=chrome&ie=UTF-8");
 	//curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L); //verify for https://
 	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);//verify for https://
-	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, internet::CurlWrite_CallbackFunc_StdString);	
+	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);	
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &topicHolder);
 
 	result = curl_easy_perform(curl);

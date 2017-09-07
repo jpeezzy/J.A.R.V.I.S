@@ -19,12 +19,12 @@ class internet
 		std::map<std::string, std::string> sites;
 	public:
 		internet();
+		static size_t CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb, std::string *s);
 		void browser(std::string website); //opens browser;
 		std::string websiteURL(std::string website); //gets phrase and finds website;
 		void websearch();
 		std::string getText(std::string url); //should return all words from a website;
-		std::string checkLocation(); //sees where you are from txt file(); 
-		std::string location(); //finds location based on ip address 
+		std::string getLocation(); //finds location based on ip address 
 		std::string weather(); //gets the weather 
 		std::string whatToWear(); //what to wear based on weather
 	//	void launchReddit(); //launches reddit

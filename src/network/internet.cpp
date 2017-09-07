@@ -27,7 +27,7 @@ std::string internet::websiteURL(std::string website)
 		return "https://www.google.com/search?q=" +website; 
 }
 
-size_t CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb, std::string *s)
+size_t internet::CurlWrite_CallbackFunc_StdString(void *contents,size_t size,size_t nmemb, std::string *s)
 {
 	//callback function that writes the contents of a webpage to a string.
 	size_t newLength = size*nmemb;
@@ -73,12 +73,12 @@ std::string internet::getText(std::string url)
 }
 
 
-std::string internet::checkLocation() //gets current location based on ip address
+std::string internet::getLocation() //gets current location based on ip address
 {
-
+	return getText("http://freegeoip.net/json/"); //keep in mind you only get 15000 of these an hour 
 }
 std::string internet::weather() 
 {
-	std::string Location = checkLocation(); //find out location based on ip address
+	std::string Location = getLocation(); //find out location based on ip address
 	getText("http://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=13098574849c3ecded8a4fc7d0e2ab4c&units=imperial");
 }
