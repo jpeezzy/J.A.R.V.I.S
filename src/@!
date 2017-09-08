@@ -242,7 +242,7 @@ void commands::setMap()
 	abstractMap({"time"}, &commands::getTime);
 	abstractMap({ "alarm", "time"}, &commands::showAlarmTime);
 	abstractMap({"hello"}, &commands::greeting);
-	abstractMap({"weather"}, &commands::getWeather);
+	abstractMap({"weather", &commands::getWeather});
 	//this funcitonn will hopefully use the internet 
 	abstractMapStr({"go to"}, &commands::launchBrowser); 
 	/////
@@ -281,8 +281,9 @@ void commands::launchBrowser(std::string Query)
 }
 
 void commands::getWeather(){
-	std::string temp = www.weather();
-	talk("the temperature is " + temp + "degrees Fahrenheit");
-	//talk(" degrees. Make sure to wear something");
+	std::string temp = www.getWeather();
+	talk("the temperature is ");
+	talk(temp);
+	talk(" degrees. Make sure to wear something");
 	//method that asys what to wear
 }; 

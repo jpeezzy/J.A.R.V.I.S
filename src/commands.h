@@ -65,6 +65,9 @@ class commands{
 		//miscellaneous
 		void meaningOfLife();
 		void greeting();
+		//gets weather and tells it 
+		void getWeather();
+		void whatToWear(); //tells you what to wear
 };
 
 #endif
