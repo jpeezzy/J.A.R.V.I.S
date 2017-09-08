@@ -12,6 +12,12 @@ PROCEDURE:
 
 1. You will now need a few libraries you'll have to install on your own. Here is what you need: 
 sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc festvox-en1 festlex-poslex
+
+for Arch linux (**Master Race**)
+$ pacman -S festival alsa-utils
+$ yaourt -S termcap
+
+
 (ubuntu) (You'll have to figure it out with your own unix distribution)
 
 2. after wards, make the rest of the files. This is crucial. After doing this, you should have a festival and speech folder filled with the libraries/speech api that I have. 
