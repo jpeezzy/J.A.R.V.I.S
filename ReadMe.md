@@ -15,7 +15,7 @@ sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc fe
 
 for Arch linux (**Master Race**)
 $ pacman -S festival alsa-utils
-$ yaourt -S termcap
+$ yaourt -S termcap xdg-utils
 
 
 (ubuntu) (You'll have to figure it out with your own unix distribution)
