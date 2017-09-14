@@ -20,7 +20,7 @@ void error(const char *msg)
 void upload_file(char* buffer, char* filename, int outputsocket);
 
 void recordVoice();
-void saveFile(char* buffer, int fd);
+void saveFile();
 
 int main(int argc, char *argv[])
 {
@@ -89,9 +89,7 @@ int main(int argc, char *argv[])
 	printf("%s\n",buffer);
 */
 	//int input_file = open("sample.wav", O_RDONLY); //OPESN FILE
-	printf("does it get to end of program? \n");
 	upload_file(buffer, "output.wav", sockfd);
-	printf("does it get to end of program? \n");
 	close(sockfd);
 	return 0;
 }
@@ -136,16 +134,14 @@ void upload_file(char* buffer, char* filename, int output_socket)
 	//now implement senfile? */
 	struct stat sb; 
 	int fd = open("output.wav", O_RDONLY);
-	int fd2 = open("output.wav", O_RDONLY);
 	fstat(fd, &sb);
 	// first send the file size - NB this is not correct as it
 	// assumes sizeof( sb.st_size ) is the same on the other
 	// end *and* has the same endianness
-	// first send the file size - NB this is not correct as it
 	write( output_socket, &sb.st_size, sizeof( sb.st_size ) );
 	ssize_t bytesSent = sendfile( output_socket, fd, NULL, sb.st_size );
-	printf("bytes sent is %zu \n", bytesSent);
-	saveFile(buffer, fd2);
+	printf("bytes sent is %d \n", bytesSent);
+	saveFile(buffer, fd);
 }
 
 void recordVoice()
@@ -158,12 +154,10 @@ void recordVoice()
 void saveFile(char* buffer, int fd)
 {
 	FILE *f = fopen("output3.wav", "wb");
-	int fdout = open("output3.wav", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);
 	ssize_t nrd;
 	while(nrd = read(fd,buffer,50))
 	{
-		printf("");
-		write(fdout, buffer, nrd);
+		fwrite(buffer, sizeof(char), sizeof(buffer), f);
 	}
 	fclose(f);
 	printf("it gets to the save the file? \n");
