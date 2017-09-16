@@ -17,11 +17,13 @@ void error(const char *msg)
 
 void saveFile(char* buffer, int fd); //saves buffer arrya to file
 
+char* speechToText(char* filename); //analyzes wav file using cmusphinx
+
 int main(int argc, char *argv[])
 {
 	int sockfd, newsockfd, portno;
 	socklen_t clilen;
-	int buffer_size = 170000;
+	int buffer_size = 256;
 	char buffer[buffer_size];
 	struct sockaddr_in serv_addr, cli_addr;
 	ssize_t n;
@@ -48,7 +50,7 @@ int main(int argc, char *argv[])
 		error("ERROR on binding");
 	////////////////////////////////////
 
-	listen(sockfd,5);
+	listen(sockfd,60);
 	clilen = sizeof(cli_addr);
 	newsockfd = accept(sockfd, 
 			(struct sockaddr *) &cli_addr, 
@@ -62,18 +64,20 @@ int main(int argc, char *argv[])
 	//They mess with the actual file descriptor by offsetting the value as it readsa
 	//leading to fd being empty with done. you may need to make multiple copies of fd
 	//also not at this moment, you must alter wav player by removing first four bytes 
-	saveFile(buffer, newsockfd);
 	
-	n = recv(newsockfd, buffer, buffer_size-1, MSG_WAITALL);
-	printf("the bytes read from socket is %d \n", n);
+	//n = recv(newsockfd, buffer, buffer_size-1, MSG_WAITALL);
+	//printf("the bytes read from socket is %d \n", n);
 
+	n = read(newsockfd, buffer, 255);
 	if (n < 0) error("ERROR reading from socket");
 	//SUCCESS IF REACHED HERE ///
 	printf("Here is the message: %s \n",buffer);
-	//saveFile(buffer, newsockfd);
-	n = write(newsockfd,"I got your message",18);
+	//speechToText("output.wav");
+
+	//now we must grab text file information, place here as string 
+
+	n = write(newsockfd,"I got your message",20);
 	if (n < 0) error("ERROR writing to socket");
-	//saveFile(buffer, newsockfd);
 	close(newsockfd);
 	close(sockfd);
 	return 0; 
@@ -91,4 +95,16 @@ void saveFile(char* buffer, int fd)
 	}
 	fclose(f);
 	printf("it gets to the save the file? \n");
+}
+
+char* speechToText(char* filename)
+{
+	char* args[] = {"pocketsphinx", "-infile", filename, "-logfn", "nul", "tee", "./words.txt", 0};
+	execv("/usr/bin/pocketsphinx", args);
+	//get the phrase inside words.txt
+	FILE *text = fopen("words.txt", "r");
+	fprintf(text, ".....this is what is finds \n");
+	char* phrase;
+	fputc(*phrase, text);
+	return phrase; 
 }

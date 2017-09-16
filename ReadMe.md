@@ -14,7 +14,7 @@ PROCEDURE:
 sudo apt-get install curl libcurl4-gnutls-dev festival-dev libestools-dev vlc festvox-en1 festlex-poslex
 
 for Arch linux (**Master Race**)
-$ pacman -S festival alsa-utils xdg-utils sox 
+$ pacman -S festival alsa-utils xdg-utils sox rsync 
 $ yaourt -S termcap
 
 
