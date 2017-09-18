@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	//stat((const char * restrict)input_file, &st);
 	char buffer[256];
 	///////////////////////////////////////////////////////////////////////
-//ERROR CHCEKING IN THIS BLOCK//
+	//ERROR CHCEKING IN THIS BLOCK//
 	if (sockfd < 0) 
 		error("ERROR opening socket");
 	server = gethostbyname(argv[1]);
@@ -63,48 +63,66 @@ int main(int argc, char *argv[])
 		fprintf(stderr,"ERROR, no such host\n");
 		exit(0);
 	}
-///////////////////////////////////
+	///////////////////////////////////
 	
 	bzero((char *) &serv_addr, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	bcopy((char *)server->h_addr, 
-			(char *)&serv_addr.sin_addr.s_addr,
-			server->h_length);
+	bcopy((char *)server->h_addr, (char *)&serv_addr.sin_addr.s_addr,server->h_length);
 	serv_addr.sin_port = htons(portno);
 	if (connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0) 
 		error("ERROR connecting");
 
 	//TRYING TO READ DATA INTO BUFFER
+	pid_t child2, wpid;
+	int status2 =0;		
+	child2 = fork();
+	if(child2)
+	{
+		printf("\n");
+		wait(&status2);
+	}
+	else
+	{
+		uploadFile(buffer, "output.wav", sockfd);
+		exit(0);
+	}
+	while((wpid = wait(&status2)) > 0);
 
-//	printf("Please enter the message: ");
-//
-	bzero(buffer,strlen(buffer));
-//	fgets(buffer,255,stdin);
-	strncpy(buffer, "sent file", 100);
+	bzero(buffer,256);
+	//	fgets(buffer,255,stdin);
+	strncpy(buffer, "sent file", 9);
 	n = write(sockfd,buffer,strlen(buffer));
 	if (n < 0) 
 		error("ERROR writing to socket");
-	bzero(buffer,sizeof(buffer));
 
-	n = read(sockfd,buffer,strlen(buffer));
-
+	bzero(buffer,256);
+	//Once sent message, wait for response from server
+	while(n = read(sockfd,buffer,256) & strcmp(buffer, "jarvis says") != 0 ){}
+	n = write(sockfd, "ready", strlen(buffer));
+	printf("%s \n",buffer);
+	bzero(buffer,256);
+	n = read(sockfd,buffer,256);
+	printf("%s \n",buffer);
+//	printf("%s \n",buffer);
 	if (n < 0) 
 		error("ERROR reading from socket");
-	printf("%s\n",buffer);
 
 	//int input_file = open("sample.wav", O_RDONLY); //OPESN FILE
-//	printf("does it get to end of program? \n");
-	uploadFile(buffer, "output.wav", sockfd);
-//	printf("does it get to end of program? \n");
+	//	printf("this is what the buffer says: %d \n", buffer);
 	close(sockfd);
 	return 0;
 }
 
 void uploadFile(char* buffer, char* filename, int output_socket)
 {
-	char* server = "masa@192.168.0.114:/home/masa/wavfiles";
-	char sshLong[200] = "ssh -p ";
-	char* port = "33";
+//x230	
+//char* server = "masa@192.168.0.114:/home/masa/wavfiles";
+//t60
+	char* server = "masa@192.168.29.119:/home/masa/jarvis/server/server";
+//	char sshLong[200] = "ssh -p "; //x230
+	char sshLong[200] = "ssh "; //x230
+//	char* port = "33"; x230
+	char* port = ""; //t60
 	printf("ssh: %s", sshLong);
 	strcat(sshLong, port);
 	printf("ssh: %s", sshLong);
