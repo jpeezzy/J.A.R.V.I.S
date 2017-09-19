@@ -102,7 +102,9 @@ int main(int argc, char *argv[])
 	printf("%s \n",buffer);
 	bzero(buffer,256);
 	n = read(sockfd,buffer,256);
-	printf("%s \n",buffer);
+	//SEND To the front end of computer;
+	char* phrase  = buffer; 
+	printf("%s \n", phrase);
 //	printf("%s \n",buffer);
 	if (n < 0) 
 		error("ERROR reading from socket");

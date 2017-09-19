@@ -18,7 +18,7 @@ void error(const char *msg)
 void saveFile(char* buffer, int fd); //saves buffer arrya to file
 
 char* speechToText(char* filename); //analyzes wav file using cmusphinx
-
+char* fileString();
 int main(int argc, char *argv[])
 {
 	int sockfd, newsockfd, portno;
@@ -56,31 +56,19 @@ int main(int argc, char *argv[])
 		error("ERROR on accept");
 	bzero(buffer,buffer_size);
 	
-	//n = read(newsockfd,buffer,buffer_size-1);
-	//IMPORTANT TO NOTE! when you run functions like saveFile, recv, and sendfile, 
-	//They mess with the actual file descriptor by offsetting the value as it readsa
-	//leading to fd being empty with done. you may need to make multiple copies of fd
-	//also not at this moment, you must alter wav player by removing first four bytes 
-	
-	//n = recv(newsockfd, buffer, buffer_size-1, MSG_WAITALL);
-	//printf("the bytes read from socket is %d \n", n);
-
 	n = read(newsockfd, buffer, 255);
 	if (n < 0) error("ERROR reading from socket");
 	//SUCCESS IF REACHED HERE ///
-	printf("Here is the message: %s \n",buffer);
-//	n = write(newsockfd, "jarvis says", 11); 
+	//printf("Here is the message: %s \n",buffer);
 	char message[buffer_size];
 	strcpy(message, speechToText("output.wav"));
 	//now we must grab text file information, place here as string 
-	//FILE* message = fopen("words.txt", "r");
-//	printf("it wrote jarvis says \n");
 	n = write(newsockfd, "jarvis says", 11);
 	if (n < 0) error("ERROR writing to socket");
 	while(n = read(newsockfd,buffer,256) & strcmp(buffer, "ready") != 0 )
 	{ 
 		n = write(newsockfd, message, 256);
-	}	
+	}
 	n = write(newsockfd, message, 256);
 	if (n < 0) error("ERROR writing to socket");
 	close(newsockfd);
@@ -104,67 +92,38 @@ void saveFile(char* buffer, int fd)
 
 char* speechToText(char* filename)
 {
-	printf("does it get to start of speechtoText \n");
+	//printf("does it get to start of speechtoText \n");
 	pid_t child, wpid;
 	int status =0;
 	FILE* cmusphinx;
 	int cmuStatus;
-
-//	child = fork();
-//	char* phrase;
-/*	if(child)
-//	{
-		
-//		printf("\n");
-		wait(&status);
-	}
-	else */
-//	{
-	//char* args[9] = {"pocketsphinx_continuous", "-infile", "output.wav", "-logfn", "nul", "|", "tee", "./words.txt", 0};
-		cmusphinx = popen("pocketsphinx_continuous -infile output.wav -logfn nul | tee ./words.txt", "w");
-		cmuStatus = pclose(cmusphinx);
-//		exit(0);
-	//execv("/usr/bin/pocketsphinx_continuous", args );
-		//cmuStatus = pclose(cmusphinx);
-//	}
-//	while ((wpid = wait(&status)) > 0); // this way, the father waits for all the child processes
+	cmusphinx = popen("pocketsphinx_continuous -infile output.wav -logfn nul | tee ./words.txt", "w");
+	cmuStatus = pclose(cmusphinx);
 	//get the phrase inside words.txt
-	printf("it gets to end of speech to text only once");
-	return "test"; 
+	char* phrase;
+	phrase = fileString();
+	return phrase; 
 }
 
 char* fileString()
 {
 	char* phrase;
+	phrase = malloc(256 +1); //alocate memory
 	printf("passss while loop");
-	FILE* inFile = fopen("words.txt", "r");
-	if (inFile = NULL)
+	FILE* inFile = fopen("words.txt", "rb");
+	if (inFile == NULL)
 	{
 		printf(" cannot find file specified");
 		return phrase = "";
 	}
 	else
 	{
-		printf("gets to else statement");
-		long lsize = ftell(inFile);
-		phrase = calloc(1, lsize+2); //alocate memory
-		
-		if(!phrase)
+		//printf("gets to else statement");
+		while(fgets(phrase, 256, inFile))
 		{
-		fclose(inFile);
-		printf("memory alloc failure!\n");
-		exit(1);
 		}
-
-		if(1 != fread(phrase, lsize, 1, inFile))
-		{
-			fclose(inFile);
-			free(phrase);
-			printf("buffer failure\n");
-			exit(1);
-		} //sends buffer
-		printf("closes infile before");
-		fclose(inFile);
-		printf ("phrase: %d\n", phrase);
+		printf ("phrase: %s\n", phrase);
 	}
+	fclose(inFile); 
+	return phrase;
 }
