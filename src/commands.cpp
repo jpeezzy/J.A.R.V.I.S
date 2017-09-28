@@ -4,14 +4,15 @@
 #include "Personality.h"
 #include <algorithm>
 #include <ctype.h>
-#include <simplemenu.h> //gui that lets user send information to backend;
+//#include <simplemenu.h> //gui that lets user send information to backend;
 //typedef void(*)(void) function1;
 #include <mutex> //std::mutex, std::unique_lock
 #include <condition_variable> //std::condition_variable
 commands::commands()
 {
 	wiki = new websearch();
-	heapsize = 21000000;
+	//heapsize = 21000000;
+	heapsize= 8000000;
 	load_init_size = 1; 
 	//myTime = myClock();
 	setMap();
@@ -53,7 +54,8 @@ void commands::giveInfo(std::string question)
 void commands::intro()
 {
 	festival_initialize(load_init_size, heapsize);
-	festival_eval_command("(voice_en1_mbrola)"); //festival must be initialized here or you get error when multithreading
+	//festival_eval_command("(voice_en1_mbrola)"); //festival must be initialized here or you get error when multithreading
+	festival_eval_command("(voice_kal_diphone)");
 	ifstream inFile;
 	inFile.open("txtFiles/userInfo.txt");
 	if(!inFile)
@@ -72,7 +74,7 @@ void commands::intro()
 	{ 
 		string name;
 		std::getline(inFile, name);
-		talk("Welcome back " + name + ". What do you need?");
+		//talk("Welcome back " + name + ". What do you need?");
 	}
 	idle();
 }
