@@ -16,3 +16,4 @@ class music
 		void stopMusic();	
 };
 #endif
+

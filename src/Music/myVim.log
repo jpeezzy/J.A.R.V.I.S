@@ -1,0 +1,693 @@
+
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim)
+fchdir() to previous dir
+sourcing "$VIM/vimrc"
+finished sourcing $VIM/vimrc
+chdir(/Users/macbreaker)
+fchdir() to previous dir
+sourcing "$HOME/.vimrc"
+Searching for "autoload/plug.vim" in "/Users/macbreaker/.vim,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/plug.vim"
+chdir(/Users/macbreaker/.vim/autoload)
+fchdir() to previous dir
+line 9: sourcing "/Users/macbreaker/.vim/autoload/plug.vim"
+finished sourcing /Users/macbreaker/.vim/autoload/plug.vim
+continuing in /Users/macbreaker/.vimrc
+Searching for "filetype.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/filetype.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/filetype.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/filetype.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime)
+fchdir() to previous dir
+line 83: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/filetype.vim"
+Searching for "ftdetect/*.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/ftdetect/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-polyglot/ftdetect)
+fchdir() to previous dir
+line 2815: sourcing "/Users/macbreaker/.vim/plugged/vim-polyglot/ftdetect/polyglot.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-polyglot/ftdetect/polyglot.vim
+continuing in /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/filetype.vim
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/ftdetect/*.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/ftdetect/*.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/ftdetect/*.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/ftdetect/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/ftdetect/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-polyglot/after/ftdetect)
+fchdir() to previous dir
+line 2815: sourcing "/Users/macbreaker/.vim/plugged/vim-polyglot/after/ftdetect/rspec.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-polyglot/after/ftdetect/rspec.vim
+continuing in /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/filetype.vim
+Searching for "/Users/macbreaker/.vim/after/ftdetect/*.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/filetype.vim
+continuing in function plug#end
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/filetype.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/filetype.vim"
+Searching for "/Users/macbreaker/.vim/after/filetype.vim"
+Searching for "ftplugin.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/ftplugin.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/ftplugin.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/ftplugin.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime)
+fchdir() to previous dir
+line 83: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/ftplugin.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/ftplugin.vim
+continuing in function plug#end
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/ftplugin.vim"
+Searching for "/Users/macbreaker/.vim/after/ftplugin.vim"
+Searching for "indent.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/indent.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/indent.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/indent.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime)
+fchdir() to previous dir
+line 83: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/indent.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/indent.vim
+continuing in function plug#end
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/indent.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/indent.vim"
+Searching for "/Users/macbreaker/.vim/after/indent.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax)
+fchdir() to previous dir
+line 86: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syntax.vim"
+Searching for "syntax/synload.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/syntax/synload.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/syntax/synload.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/syntax/synload.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/synload.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax)
+fchdir() to previous dir
+line 19: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/synload.vim"
+Searching for "syntax/syncolor.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax)
+fchdir() to previous dir
+line 21: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim
+continuing in /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/synload.vim
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/after/syntax/syncolor.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/synload.vim
+continuing in /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syntax.vim
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syntax.vim
+continuing in function plug#end
+Searching for "syntax/syncolor.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax)
+fchdir() to previous dir
+line 35: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim
+continuing in /Users/macbreaker/.vimrc
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/after/syntax/syncolor.vim"
+Searching for "colors/jay.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/colors/jay.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/colors/jay.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/colors/jay.vim"
+chdir(/Users/macbreaker/.vim/plugged/jay/colors)
+fchdir() to previous dir
+line 36: sourcing "/Users/macbreaker/.vim/plugged/jay/colors/jay.vim"
+Searching for "syntax/syncolor.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax)
+fchdir() to previous dir
+line 9: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim
+continuing in /Users/macbreaker/.vim/plugged/jay/colors/jay.vim
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/after/syntax/syncolor.vim"
+Searching for "syntax/syncolor.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/syntax/syncolor.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax)
+fchdir() to previous dir
+line 12: sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/syntax/syncolor.vim
+continuing in /Users/macbreaker/.vim/plugged/jay/colors/jay.vim
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/syntax/syncolor.vim"
+Searching for "/Users/macbreaker/.vim/after/syntax/syncolor.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/jay/colors/jay.vim
+continuing in /Users/macbreaker/.vimrc
+finished sourcing $HOME/.vimrc
+Searching for "pack/*/start/*" in "/Users/macbreaker/.vim,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/pack/*/start/*"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/pack/*/start/*"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/pack/*/start/*"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/pack/*/start/*"
+Searching for "/Users/macbreaker/.vim/after/pack/*/start/*"
+not found in 'packpath': "pack/*/start/*"
+Searching for "plugin/**/*.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/plugin/**/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/plugin/**/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/plugin)
+fchdir() to previous dir
+sourcing "/Users/macbreaker/.vim/plugged/vim-airline/plugin/airline.vim"
+Searching for "autoload/airline.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload)
+fchdir() to previous dir
+line 70: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline.vim
+continuing in /Users/macbreaker/.vim/plugged/vim-airline/plugin/airline.vim
+Searching for "autoload/airline/init.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/init.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/init.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 155: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/init.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/init.vim
+continuing in /Users/macbreaker/.vim/plugged/vim-airline/plugin/airline.vim
+Searching for "autoload/airline/parts.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/parts.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/parts.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 112: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/parts.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/parts.vim
+continuing in function airline#init#bootstrap
+No matching autocommands
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/plugin/airline.vim
+Searching for "/Users/macbreaker/.vim/plugged/jay/plugin/**/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/plugin/**/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/plugin/**/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-fugitive/plugin)
+fchdir() to previous dir
+sourcing "/Users/macbreaker/.vim/plugged/vim-fugitive/plugin/fugitive.vim"
+Searching for "autoload/fugitive.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/autoload/fugitive.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/autoload/fugitive.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/autoload/fugitive.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/autoload/fugitive.vim"
+Searching for "/Users/macbreaker/.vim/after/autoload/fugitive.vim"
+not found in 'runtimepath': "autoload/fugitive.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/plugin/**/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-gitgutter/plugin)
+fchdir() to previous dir
+sourcing "/Users/macbreaker/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim"
+Searching for "autoload/gitgutter/highlight.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/gitgutter/highlight.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/gitgutter/highlight.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/gitgutter/highlight.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/gitgutter/highlight.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/gitgutter/highlight.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter)
+fchdir() to previous dir
+line 65: sourcing "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+continuing in /Users/macbreaker/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+SignColumn     xxx ctermbg=233 guibg=#121212
+	Last set from ~/.vim/plugged/jay/colors/jay.vim
+finished sourcing /Users/macbreaker/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+Searching for "/Users/macbreaker/.vim/plugged/supertab/plugin/**/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/supertab/plugin)
+fchdir() to previous dir
+sourcing "/Users/macbreaker/.vim/plugged/supertab/plugin/supertab.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/supertab/plugin/supertab.vim
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/plugin/**/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/delimitMate/plugin)
+fchdir() to previous dir
+sourcing "/Users/macbreaker/.vim/plugged/delimitMate/plugin/delimitMate.vim"
+Searching for "autoload/delimitMate.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/autoload/delimitMate.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/autoload/delimitMate.vim"
+chdir(/Users/macbreaker/.vim/plugged/delimitMate/autoload)
+fchdir() to previous dir
+line 1: sourcing "/Users/macbreaker/.vim/plugged/delimitMate/autoload/delimitMate.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/delimitMate/autoload/delimitMate.vim
+continuing in function <SNR>21_setup[30]..<SNR>21_init[3]..<SNR>21_option_init[11]..<SNR>21_set
+No matching autocommands
+finished sourcing /Users/macbreaker/.vim/plugged/delimitMate/plugin/delimitMate.vim
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/plugin/**/*.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-commentary/plugin)
+fchdir() to previous dir
+sourcing "/Users/macbreaker/.vim/plugged/vim-commentary/plugin/commentary.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-commentary/plugin/commentary.vim
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/plugin/**/*.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/**/*.vim"
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/getscriptPlugin.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/getscriptPlugin.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/gzip.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/gzip.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/logiPat.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/logiPat.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/manpager.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/manpager.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/matchparen.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/matchparen.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/netrwPlugin.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/netrwPlugin.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/rrhelper.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/rrhelper.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/spellfile.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/spellfile.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/tarPlugin.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/tarPlugin.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/tohtml.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/tohtml.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/vimballPlugin.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/vimballPlugin.vim
+chdir(/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin)
+fchdir() to previous dir
+sourcing "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/zipPlugin.vim"
+finished sourcing /usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/plugin/zipPlugin.vim
+Searching for "pack/*/start/*" in "/Users/macbreaker/.vim,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/pack/*/start/*"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/pack/*/start/*"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/pack/*/start/*"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/pack/*/start/*"
+Searching for "/Users/macbreaker/.vim/after/pack/*/start/*"
+not found in 'packpath': "pack/*/start/*"
+Searching for "plugin/**/*.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/plugin/**/*.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/plugin/**/*.vim"
+Searching for "/Users/macbreaker/.vim/after/plugin/**/*.vim"
+not found in 'runtimepath': "plugin/**/*.vim"
+Reading viminfo file "/Users/macbreaker/.viminfo" info oldfiles
+Executing BufWinEnter Auto commands for "*"
+autocommand call <sid>on_window_changed()
+
+Searching for "autoload/airline/extensions.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 6: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init
+Searching for "autoload/airline/extensions/quickfix.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/quickfix.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/quickfix.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 16: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/quickfix.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/quickfix.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/netrw.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/netrw.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/netrw.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 30: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/netrw.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/netrw.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/term.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/term.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/term.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 35: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/term.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/term.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/hunks.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/hunks.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 70: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/hunks.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/branch.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/branch.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/branch.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 100: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/branch.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/branch.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/whitespace.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/whitespace.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 132: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/po.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/po.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/po.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 142: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/po.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/po.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/wordcount.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/wordcount.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 147: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/tabline.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 152: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/airline/extensions/tabline/autoshow.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline/autoshow.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline)
+fchdir() to previous dir
+line 1: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load[152]..airline#extensions#tabline#init[8]..<SNR>45_toggle_on
+Searching for "autoload/airline/extensions/tabline/tabs.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline/tabs.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline)
+fchdir() to previous dir
+line 2: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load[152]..airline#extensions#tabline#init[8]..<SNR>45_toggle_on
+Searching for "autoload/airline/extensions/tabline/buffers.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline/buffers.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline)
+fchdir() to previous dir
+line 3: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load[152]..airline#extensions#tabline#init[8]..<SNR>45_toggle_on
+Searching for "autoload/airline/extensions/tabline/ctrlspace.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline/ctrlspace.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/ctrlspace.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline)
+fchdir() to previous dir
+line 4: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/ctrlspace.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/ctrlspace.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load[152]..airline#extensions#tabline#init[8]..<SNR>45_toggle_on
+Searching for "autoload/airline/extensions/keymap.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/keymap.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/keymap.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 187: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/keymap.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/keymap.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[6]..airline#extensions#load
+Searching for "autoload/vimtex.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/supertab/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/delimitMate/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-commentary/autoload/vimtex.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/autoload/vimtex.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime/autoload/vimtex.vim"
+Searching for "/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/after/autoload/vimtex.vim"
+Searching for "/Users/macbreaker/.vim/after/autoload/vimtex.vim"
+not found in 'runtimepath': "autoload/vimtex.vim"
+Searching for "autoload/airline/section.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/section.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/section.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 3: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/section.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/section.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[7]..airline#init#sections
+Searching for "autoload/airline/highlighter.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/highlighter.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/highlighter.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 2: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/highlighter.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/highlighter.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[7]..airline#init#sections[3]..airline#section#create_left[1]..<SNR>51_create[51]..<SNR>51_wrap_accent
+Searching for "autoload/airline/themes/jay.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/themes/jay.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/themes/jay.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/airline/themes/jay.vim"
+chdir(/Users/macbreaker/.vim/plugged/jay/autoload/airline/themes)
+fchdir() to previous dir
+line 12: sourcing "/Users/macbreaker/.vim/plugged/jay/autoload/airline/themes/jay.vim"
+Searching for "autoload/airline/themes.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/themes.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/themes.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 89: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/themes.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/themes.vim
+continuing in /Users/macbreaker/.vim/plugged/jay/autoload/airline/themes/jay.vim
+finished sourcing /Users/macbreaker/.vim/plugged/jay/autoload/airline/themes/jay.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init
+Searching for "autoload/airline/util.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/util.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/util.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 1: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/util.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/util.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[17]..airline#switch_theme[14]..airline#load_theme[14]..airline#extensions#load_theme
+Searching for "autoload/airline/builder.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/builder.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/builder.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline)
+fchdir() to previous dir
+line 1: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/builder.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/builder.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[17]..airline#switch_theme[14]..airline#load_theme[15]..airline#update_statusline[18]..<SNR>14_invoke_funcrefs
+Searching for "autoload/airline/extensions/default.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/default.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/default.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions)
+fchdir() to previous dir
+line 2: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/default.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/default.vim
+continuing in function <SNR>13_on_window_changed[15]..<SNR>13_init[17]..airline#switch_theme[14]..airline#load_theme[15]..airline#update_statusline[18]..<SNR>14_invoke_funcrefs[2]..airline#util#exec_funcrefs
+No matching autocommands
+No matching autocommands
+Executing BufWinEnter Auto commands for "*"
+autocommand if s:can_diffoff(+expand('<abuf>')) && s:diff_window_count() == 1 |   call s:diffoff() | endif
+
+Executing BufEnter Auto commands for "*"
+autocommand if gettabvar(tabpagenr(), 'gitgutter_didtabenter') |   call settabvar(tabpagenr(), 'gitgutter_didtabenter', 0) |   call gitgutter#all() | else |   call gitgutter#process_buffer(bufnr(''), 0) | endif
+
+Searching for "autoload/gitgutter.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/gitgutter.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/gitgutter.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/gitgutter.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/gitgutter.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/gitgutter.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload)
+fchdir() to previous dir
+line 0: sourcing "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+continuing in BufEnter Auto commands for "*"
+Searching for "autoload/gitgutter/utility.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/gitgutter/utility.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/gitgutter/utility.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/gitgutter/utility.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/gitgutter/utility.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/gitgutter/utility.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter)
+fchdir() to previous dir
+line 1: sourcing "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+continuing in function gitgutter#process_buffer
+Searching for "autoload/gitgutter/hunk.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/gitgutter/hunk.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/gitgutter/hunk.vim"
+Searching for "/Users/macbreaker/.vim/plugged/jay/autoload/gitgutter/hunk.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-polyglot/autoload/gitgutter/hunk.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-fugitive/autoload/gitgutter/hunk.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter)
+fchdir() to previous dir
+line 21: sourcing "/Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim
+continuing in function gitgutter#process_buffer
+Executing BufEnter Auto commands for "*"
+autocommand if !exists('b:delimitMate_was_here') |   call <SID>setup() |   let b:delimitMate_was_here = 1 | endif
+
+No matching autocommands
+No matching autocommands
+Executing BufEnter Auto commands for "*"
+autocommand sil call s:LocalBrowse(expand("<amatch>"))
+
+Executing VimEnter Auto commands for "*"
+autocommand call <sid>on_window_changed()
+
+Executing VimEnter Auto commands for "*"
+autocommand if expand('<amatch>')==''|call fugitive#detect(getcwd())|endif
+
+chdir(.)
+/Users/macbreaker/jarvis/src/Music
+Executing User Auto commands for "Fugitive"
+autocommand if s:buffer().commit() =~# '^0\=$' | exe "command! -buffer -bar -bang -nargs=1 -complete=customlist,s:MoveComplete Gmove :execute s:Move(<bang>0,<q-args>)" | exe "command! -buffer -bar -bang Gremove :execute s:Remove('edit',<bang>0)" | exe "command! -buffer -bar -bang Gdelete :execute s:Remove('bdelete',<bang>0)" | endif
+
+Executing User Auto commands for "Fugitive"
+autocommand if s:buffer().type('file', 'blob') | exe "command! -buffer -bar -bang -range=0 -nargs=* Gblame :execute s:Blame(<bang>0,<line1>,<line2>,<count>,[<f-args>])" | endif
+
+Executing User Auto commands for "Fugitive"
+autocommand if &filetype =~# '^git\%(commit\)\=$' && &foldtext ==# 'foldtext()' |    set foldtext=fugitive#foldtext() | endif
+
+Executing VimEnter Auto commands for "*"
+autocommand if winnr() != winnr('$') | :GitGutterAll | endif
+
+Executing VimEnter Auto commands for "*"
+autocommand sil call s:VimEnter(expand("<amatch>"))
+
+Executing CursorMoved Auto commands for "*"
+autocommand call s:Highlight_Matching_Pair()
+
+Executing CursorMoved Auto commands for "*"
+autocommand call <sid>sync_active_winnr()
+
+autocommand call s:wordcount_update()
+
+Searching for "autoload/airline/extensions/tabline/buflist.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline/buflist.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/buflist.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline)
+fchdir() to previous dir
+line 1: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/buflist.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/buflist.vim
+continuing in function airline#extensions#tabline#get[15]..airline#extensions#tabline#buffers#get[12]..<SNR>48_get_visible_buffers
+Searching for "autoload/airline/extensions/tabline/formatters/default.vim" in "/Users/macbreaker/.vim,/Users/macbreaker/.vim/plugged/vim-airline/,/Users/macbreaker/.vim/plugged/jay/,/Users/macbreaker/.vim/plugged/vim-polyglot/,/Users/macbreaker/.vim/plugged/vim-fugitive/,/Users/macbreaker/.vim/plugged/vim-gitgutter/,/Users/macbreaker/.vim/plugged/supertab/,/Users/macbreaker/.vim/plugged/delimitMate/,/Users/macbreaker/.vim/plugged/vim-commentary/,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/runtime,/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/Resources/vim/vimfiles/after,/Users/macbreaker/.vim/plugged/vim-polyglot/after,/Users/macbreaker/.vim/after"
+Searching for "/Users/macbreaker/.vim/autoload/airline/extensions/tabline/formatters/default.vim"
+Searching for "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim"
+chdir(/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters)
+fchdir() to previous dir
+line 2: sourcing "/Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim"
+finished sourcing /Users/macbreaker/.vim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim
+continuing in function airline#extensions#tabline#get[15]..airline#extensions#tabline#buffers#get[12]..<SNR>48_get_visible_buffers[8]..airline#extensions#tabline#get_buffer_name
+
+Executing BufWinLeave Auto commands for "*"
+autocommand execute getwinvar(+bufwinnr(+expand('<abuf>')), 'fugitive_leave')
+
+Executing BufWinLeave Auto commands for "*"
+autocommand if s:can_diffoff(+expand('<abuf>')) && s:diff_window_count() == 2 |   call s:diffoff_all(getbufvar(+expand('<abuf>'), 'git_dir')) | endif
+
+Executing BufUnload Auto commands for "*"
+autocommand call <sid>on_window_changed()
+
+Executing BufUnload Auto commands for "*"
+autocommand call airline#extensions#tabline#buflist#invalidate()
