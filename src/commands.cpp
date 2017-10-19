@@ -8,12 +8,12 @@
 //typedef void(*)(void) function1;
 #include <mutex> //std::mutex, std::unique_lock
 #include <condition_variable> //std::condition_variable
-commands::commands()
+commands::commands() : speecher()
 {
 	wiki = new websearch();
 	//heapsize = 21000000;
-	heapsize= 8000000;
-	load_init_size = 1; 
+	//heapsize= 8000000;
+	//load_init_size = 1; 
 	//myTime = myClock();
 	setMap();
 	/*THREAD TO CONSTANTLY CHECK TO LAUNCH ALARM */ 
@@ -22,7 +22,9 @@ commands::commands()
 
 void commands::talk(std::string text)
 {
-	festival_say_text(EST_String(text.c_str()));
+	//festival_say_text(EST_String(text.c_str()));
+	//speecher.speak(text);
+	speecher.speak(text);
 }
 
 void commands::giveInfo(std::string question)
@@ -53,9 +55,9 @@ void commands::giveInfo(std::string question)
 
 void commands::intro()
 {
-	festival_initialize(load_init_size, heapsize);
+//	festival_initialize(load_init_size, heapsize);
 	//festival_eval_command("(voice_en1_mbrola)"); //festival must be initialized here or you get error when multithreading
-	festival_eval_command("(voice_kal_diphone)");
+//	festival_eval_command("(voice_kal_diphone)");
 	ifstream inFile;
 	inFile.open("txtFiles/userInfo.txt");
 	if(!inFile)
@@ -74,9 +76,9 @@ void commands::intro()
 	{ 
 		string name;
 		std::getline(inFile, name);
-		//talk("Welcome back " + name + ". What do you need?");
+		talk("Welcome back " + name + ". What do you need?");
 	}
-	idle();
+	//idle();
 }
 
 void commands::idle() 
@@ -287,4 +289,4 @@ void commands::getWeather(){
 	talk("the temperature is " + temp + "degrees Fahrenheit");
 	//talk(" degrees. Make sure to wear something");
 	//method that asys what to wear
-}; 
+} 

@@ -3,5 +3,5 @@
 int main()
 {
 	music test;
-	test.playMusic("test");
+	test.playMusic("");
 }

@@ -1,8 +1,9 @@
 #ifndef COMMANDS_H
 #define COMMANDS_H
 
+#include "speech.h" //enables the computer to talk
 #include <EST_String.h>
-#include <festival.h>
+//#include <festival.h>
 #include "internet.h"//internet();
 #include <iostream>
 #include <map>
@@ -16,8 +17,9 @@ class commands{
 	private:
 		//typedef void(*function)(void) function1;
 		//using func_t = void (*)(void);
-		int heapsize;
-		int load_init_size;
+		speech speecher; // may not be able to use a seperate object to speak
+		//int heapsize;
+		//int load_init_size;
 		internet www; 
 		myClock myTime;
 		music myTunes;

@@ -1,13 +1,51 @@
 #include "client.h"
 #include <iostream>
 #include "commands.h"
+#include <chrono> //for sleep
+int main(int argc, char *argv[])
+{
+	client c;
+	c.jarvis.intro();
+	c.socketConnect(argc, argv);
+	return 0;
+}
 
+std::string client::getSpeechString()
+{
+	return speechText;
+}
 
-//for sleep
-#include <chrono>
+void client::socketExchange()
+{
+	bzero(buffer,256);
+	//	fgets(buffer,255,stdin);
+	strncpy(buffer, "sent file", 9);
+	n = write(sockfd,buffer,strlen(buffer));
+	if (n < 0) 
+		error("ERROR writing to socket");
+
+	bzero(buffer,256);
+	//Once sent message, wait for response from server
+	while(n = read(sockfd,buffer,256) & strcmp(buffer, "jarvis says") != 0 ){}
+	n = write(sockfd, "ready", strlen(buffer));
+	printf("%s \n",buffer);
+	bzero(buffer,256);
+	n = read(sockfd,buffer,256);
+	//SEND To the front end of computer;
+	char* phrase  = buffer;
+	speechText = std::string(phrase);
+	printf("%s \n", phrase);
+//	printf("%s \n",buffer);
+	if (n < 0) 
+		error("ERROR reading from socket");
+	//int input_file = open("sample.wav", O_RDONLY); //OPESN FILE
+	//	printf("this is what the buffer says: %d \n", buffer);
+	close(sockfd);
+}
+
 client::client()
 {
-	jarvisThread = std::thread(&commands::intro, &jarvis);
+	//jarvisThread = std::thread(&commands::intro, &jarvis);
 }
 void client::error(const char *msg)
 {
@@ -81,7 +119,6 @@ void client::openSocket(int argc, char* argv[])
 		exit(0);
 	}
 	///////////////////////////////////
-	
 	bzero((char *) &serv_addr, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
 	bcopy((char *)server->h_addr, (char *)&serv_addr.sin_addr.s_addr,server->h_length);
@@ -108,52 +145,3 @@ void client::socketUpload() //uploads file
 	while((wpid = wait(&status2)) > 0);
 
 }
-int main(int argc, char *argv[])
-{
-	client c;
-	//commands command;
-	c.socketConnect(argc, argv);
-	//command.task(c.getSpeechString());
-	c.jarvis.storeQuestion(c.getSpeechString());
-	//std::this_thread::sleep_for (std::chrono::seconds(10));	
-	while(1)
-	{
-		
-	}
-	return 0;
-}
-
-std::string client::getSpeechString()
-{
-	return speechText;
-}
-
-void client::socketExchange()
-{
-	bzero(buffer,256);
-	//	fgets(buffer,255,stdin);
-	strncpy(buffer, "sent file", 9);
-	n = write(sockfd,buffer,strlen(buffer));
-	if (n < 0) 
-		error("ERROR writing to socket");
-
-	bzero(buffer,256);
-	//Once sent message, wait for response from server
-	while(n = read(sockfd,buffer,256) & strcmp(buffer, "jarvis says") != 0 ){}
-	n = write(sockfd, "ready", strlen(buffer));
-	printf("%s \n",buffer);
-	bzero(buffer,256);
-	n = read(sockfd,buffer,256);
-	//SEND To the front end of computer;
-	char* phrase  = buffer;
-	speechText = std::string(phrase);
-	printf("%s \n", phrase);
-//	printf("%s \n",buffer);
-	if (n < 0) 
-		error("ERROR reading from socket");
-
-	//int input_file = open("sample.wav", O_RDONLY); //OPESN FILE
-	//	printf("this is what the buffer says: %d \n", buffer);
-	close(sockfd);
-}
-
